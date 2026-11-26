@@ -1,0 +1,65 @@
+{
+ "schema_version": "0.1",
+ "_note": "kind=general: newly authored verification-type primitives (not distilled from writing-engines). Report them separately from domain atoms in any transfer claim.",
+ "primitives": [
+  {
+   "schema_version": "0.1", "id": "ce.general.claim_decomposition", "name": "主张拆解", "version": "0.1.0",
+   "purpose": "把一段论述拆成可逐条检验的原子主张，区分事实、推断与价值判断。",
+   "family": "主张拆解", "kind": "general", "domain": "reasoning", "tags": ["verification"],
+   "trigger_conditions": ["输入含论证、结论或多句断言", "后续需要逐条核查"],
+   "preconditions": ["有待分析的文本"],
+   "inputs": {"text": "string"},
+   "procedure": ["逐句找出断言", "每条标注类型：事实／推断／价值判断", "为推断写出它依赖的前提", "合并重复主张，输出编号清单"],
+   "outputs": {"claims": "list[{id, text, type, premises}]"},
+   "postconditions": ["每条主张可单独判真伪或判支持度"],
+   "evaluation": {"criteria": ["主张召回率（对照人工标注）", "类型标注准确率"], "method": "人工标注集比对"},
+   "failure_modes": ["把一个复合主张当成一条", "把修辞句误判为事实断言"],
+   "safety_constraints": ["不改写原意"],
+   "transfer": ["research", "argument_analysis", "writing-review"],
+   "lifecycle": "draft", "provenance": {"source": "cognitive-engine", "author": "cognitive-engine maintainers"}
+  },
+  {
+   "schema_version": "0.1", "id": "ce.general.counterexample_search", "name": "反例挑战", "version": "0.1.0",
+   "purpose": "为宽泛、因果或全称主张寻找可信反例，并据此收窄主张范围。",
+   "family": "反例挑战", "kind": "general", "domain": "reasoning", "tags": ["verification", "adversarial"],
+   "trigger_conditions": ["主张含全称、因果或绝对化表述", "结论影响较大"],
+   "preconditions": ["主张已被拆解成单条"],
+   "inputs": {"claim": "string", "evidence": "list", "budget": "int"},
+   "procedure": ["识别主张的范围与量词", "推出主张成立的必要条件", "搜索边界情形与反例", "评估反例是否有效", "改写主张的适用范围"],
+   "outputs": {"counterexamples": "list", "verdict": "string", "revised_claim": "string", "open_questions": "list"},
+   "evaluation": {"criteria": ["有效反例检出率", "误报率"], "method": "预置反例的挑战集"},
+   "failure_modes": ["稻草人反例", "挑选个例以偏概全", "把证据缺失当作证伪"],
+   "transfer": ["research", "argument_analysis", "decision"],
+   "lifecycle": "draft", "provenance": {"source": "spec/COGNITIVE_PRIMITIVES_SPEC.md §7"}
+  },
+  {
+   "schema_version": "0.1", "id": "ce.general.evidence_grounding", "name": "证据绑定", "version": "0.1.0",
+   "purpose": "把每条结论绑定到给定素材中的具体出处，找不到出处的标为无支撑。",
+   "family": "证据绑定", "kind": "general", "domain": "reasoning", "tags": ["verification", "provenance"],
+   "trigger_conditions": ["任务给了素材或来源", "输出含事实性陈述"],
+   "preconditions": ["有素材集合"],
+   "inputs": {"claims": "list", "material": "list"},
+   "procedure": ["对每条结论在素材中查找支持片段", "记录出处编号", "标注支持强度：直接／间接／无", "删除或改写无支撑的陈述"],
+   "outputs": {"evidence_map": "list[{claim, source, strength}]", "unsupported": "list"},
+   "evaluation": {"criteria": ["无支撑陈述比例", "出处引用准确率"], "method": "自动核对素材字符串 + 抽样人工复核"},
+   "failure_modes": ["引用了素材但曲解原意", "把常识当作有来源"],
+   "safety_constraints": ["不得编造来源"],
+   "transfer": ["research", "writing", "compliance"],
+   "lifecycle": "draft", "provenance": {"source": "cognitive-engine"}
+  },
+  {
+   "schema_version": "0.1", "id": "ce.general.redline_audit", "name": "红线审查", "version": "0.1.0",
+   "purpose": "按预先声明的硬约束逐条审查产出，每处违规给出位置和改法。",
+   "family": "红线审查", "kind": "general", "domain": "reasoning", "tags": ["verification", "constraint"],
+   "trigger_conditions": ["任务有明确禁区、格式或合规约束"],
+   "preconditions": ["约束清单可枚举"],
+   "inputs": {"draft": "string", "redlines": "list"},
+   "procedure": ["逐条读取红线", "在草稿中定位所有违规处", "为每处写出替换方案", "复查修改后不引入新违规"],
+   "outputs": {"violations": "list[{rule, span, fix}]", "revised": "string"},
+   "evaluation": {"criteria": ["违规检出率", "修复后残留违规数"], "method": "正则/规则可查部分自动判定，其余抽样人工"},
+   "failure_modes": ["只查字面不查语义", "修复时改坏了内容"],
+   "transfer": ["writing", "compliance", "code-review"],
+   "lifecycle": "draft", "provenance": {"source": "writing-engines 红线审查机制的通用化"}
+  }
+ ]
+}

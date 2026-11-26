@@ -1,0 +1,5209 @@
+{
+ "schema_version": "0.1",
+ "primitives": [
+  {
+   "schema_version": "0.1",
+   "id": "we.zhexuan.a1",
+   "name": "接情绪（Acknowledge）",
+   "version": "0.1.0",
+   "purpose": "动笔第一动作——承认读者此刻的感受是合理、正当的。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "zhexuan-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "动笔第一动作——承认读者此刻的感受是合理、正当的"
+   ],
+   "failure_modes": [
+    "① 跳过直接讲理 ② 接了情绪但说\"但是\"（\"理解，但是……\"会把刚建立的信任击碎——用\"与此同时/而\"代替\"但是\"）。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "zhexuan-writing/references/atom-ops.md### 1. 接情绪（Acknowledge）",
+    "evidence": ""
+   },
+   "trigger_conditions": [
+    "话题自带情绪（愤怒/焦虑/委屈/恐慌）。凡情绪在场，必须先接。"
+   ],
+   "completeness": 0.2
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.zhexuan.a2",
+   "name": "反转定调（Reframe the Question）",
+   "version": "0.1.0",
+   "purpose": "把\"个人问题/现象问题\"转译为\"时代问题/标准问题\"——不回答原问题，改变问题的层级。",
+   "family": "换层级",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "zhexuan-writing",
+    "family:换层级"
+   ],
+   "procedure": [
+    "把\"个人问题/现象问题\"转译为\"时代问题/标准问题\"——不回答原问题，改变问题的层级"
+   ],
+   "failure_modes": [
+    "反转后没有支撑（只换问题不还答案）；反转过度显得诡辩（新问题必须更真实、更有解释力）。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "zhexuan-writing/references/atom-ops.md### 2. 反转定调（Reframe the Question）",
+    "evidence": ""
+   },
+   "trigger_conditions": [
+    "当原问题本身就是陷阱（\"我是不是长不大\"→\"标准是否合理\"；\"年轻人是不是躺平\"→\"稳定的定义是否过时\"）。"
+   ],
+   "completeness": 0.2
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.zhexuan.a3",
+   "name": "数据压舱（Anchoring with Data）",
+   "version": "0.1.0",
+   "purpose": "用贴身化、精确到可感知的具体数字替代概念论据。",
+   "family": "数据压舱",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "zhexuan-writing",
+    "family:数据压舱"
+   ],
+   "procedure": [
+    "用贴身化、精确到可感知的具体数字替代概念论据"
+   ],
+   "failure_modes": [
+    "概念级数据（\"大量\"\"很多\"）无效；数据不贴身（总数≠可感知）；数据来源模糊经不起追问。**贴身 = 读者能用自己的生活丈量。**"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "zhexuan-writing/references/atom-ops.md### 3. 数据压舱（Anchoring with Data）",
+    "evidence": ""
+   },
+   "trigger_conditions": [
+    "读者质疑最烈的地方（\"为什么不放开？\"\"AI 到底抢了多少工作？\"）。"
+   ],
+   "completeness": 0.2
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.zhexuan.a4",
+   "name": "场景钩 / 故事钩（Scene Hook）",
+   "version": "0.1.0",
+   "purpose": "一个具体的人、画面、细节，让抽象命题有体温。",
+   "family": "小处起笔",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "zhexuan-writing",
+    "family:小处起笔"
+   ],
+   "procedure": [
+    "一个具体的人、画面、细节，让抽象命题有体温"
+   ],
+   "failure_modes": [
+    "故事与论点脱节（为了煽情而煽情）；虚构细节（浙江宣传的故事全部可查证——真实感是底线）。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "zhexuan-writing/references/atom-ops.md### 4. 场景钩 / 故事钩（Scene Hook）",
+    "evidence": ""
+   },
+   "trigger_conditions": [
+    "任何需要读者\"感受\"而非\"理解\"的地方。"
+   ],
+   "completeness": 0.2
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.zhexuan.a5",
+   "name": "拆机制（Deconstruct to Enumerable）",
+   "version": "0.1.0",
+   "purpose": "把模糊的批评对象/现象拆成可枚举的类型、步骤、环节。",
+   "family": "分类拆解",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "zhexuan-writing",
+    "family:分类拆解"
+   ],
+   "procedure": [
+    "把模糊的批评对象/现象拆成可枚举的类型、步骤、环节"
+   ],
+   "failure_modes": [
+    "类型之间重叠（枚举要互斥）；只有类型没有案例（每种必须带真实例子）；拆解变成罗列（最后要点透共同病灶）。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "zhexuan-writing/references/atom-ops.md### 5. 拆机制（Deconstruct to Enumerable）",
+    "evidence": ""
+   },
+   "trigger_conditions": [
+    "要批评某个模糊对象时（\"低级红高级黑\"\"舆论乱象\"\"直播收割\"）。"
+   ],
+   "completeness": 0.2
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.zhexuan.a6",
+   "name": "升维 / 重新定义（Elevate & Redefine）",
+   "version": "0.1.0",
+   "purpose": "从\"对不对/好不好\"升到\"标准合不合理、概念是不是被用错了\"；用「不是A，而是B」重写概念。",
+   "family": "换层级",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "zhexuan-writing",
+    "family:换层级"
+   ],
+   "procedure": [
+    "从\"对不对/好不好\"升到\"标准合不合理、概念是不是被用错了\"",
+    "用「不是A，而是B」重写概念"
+   ],
+   "failure_modes": [
+    "新定义没有比旧定义更真实（读者一眼看穿是洗白）；\"不是A\"说得清楚\"而是B\"含糊（重建必须比解构更用力）。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "zhexuan-writing/references/atom-ops.md### 6. 升维 / 重新定义（Elevate & Redefine）",
+    "evidence": ""
+   },
+   "trigger_conditions": [
+    "概念本身被污染时（\"长大\"被定义成任务清单；\"铁饭碗\"被定义成编制）。"
+   ],
+   "completeness": 0.2
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.zhexuan.a7",
+   "name": "古今双轨对照（Dialectic Contrast）",
+   "version": "0.1.0",
+   "purpose": "历史锚 ↔ 当代实例交替出现，给结论时间纵深。",
+   "family": "古今对照",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "zhexuan-writing",
+    "family:古今对照"
+   ],
+   "procedure": [
+    "历史锚 ↔ 当代实例交替出现，给结论时间纵深"
+   ],
+   "failure_modes": [
+    "历史段变成掉书袋（古今要服务于同一个论点）；对照生硬（两轨之间必须有明确的逻辑桥）。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "zhexuan-writing/references/atom-ops.md### 7. 古今双轨对照（Dialectic Contrast）",
+    "evidence": ""
+   },
+   "trigger_conditions": [
+    "论点需要\"规律感\"时（不是\"我认为\"，是\"历史反复证明\"）。"
+   ],
+   "completeness": 0.2
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.zhexuan.a8",
+   "name": "具体-抽象双层结构（Concrete-Abstract Sandwich）",
+   "version": "0.1.0",
+   "purpose": "开炮的位置永远选在最具体、最可操作层；保护层永远是抽象原则。",
+   "family": "换层级",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "zhexuan-writing",
+    "family:换层级"
+   ],
+   "procedure": [
+    "开炮的位置永远选在最具体、最可操作层",
+    "保护层永远是抽象原则"
+   ],
+   "failure_modes": [
+    "靶心泛化（\"资本\"\"体制\"\"社会\"——立即越界）；保护层缺席（只有开炮没有收拢——变成情绪宣泄）。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "zhexuan-writing/references/atom-ops.md### 8. 具体-抽象双层结构（Concrete-Abstract Sandwich）",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.zhexuan.a9",
+   "name": "三句表态 / 排比收尾（Trilogy Stance）",
+   "version": "0.1.0",
+   "purpose": "结尾给一个结构化、可带走、可转发的立场——三句排比或一组对仗。",
+   "family": "排比/三段",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "zhexuan-writing",
+    "family:排比/三段"
+   ],
+   "procedure": [
+    "结尾给一个结构化、可带走、可转发的立场——三句排比或一组对仗"
+   ],
+   "failure_modes": [
+    "排比只有形式没有增量（三句说同一件事）；表态逃避（三句都是和稀泥——每句必须是有立场的增量）。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "zhexuan-writing/references/atom-ops.md### 9. 三句表态 / 排比收尾（Trilogy Stance）",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.zhexuan.a10",
+   "name": "金句压缩（Compress to Aphorism）",
+   "version": "0.1.0",
+   "purpose": "把论点压缩成可脱离语境的符号——一句话被单独转发也成立。",
+   "family": "金句断语",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "zhexuan-writing",
+    "family:金句断语"
+   ],
+   "procedure": [
+    "把论点压缩成可脱离语境的符号——一句话被单独转发也成立"
+   ],
+   "failure_modes": [
+    "密度过载显油；金句与上下文无关（格言堆砌）；为了金句牺牲准确（金句必须经得起推敲——\"算法不懂孝顺，但它懂孤独\"这句之所以成立，是因为前文完整论证了算法推荐逻辑）。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "zhexuan-writing/references/atom-ops.md### 10. 金句压缩（Compress to Aphorism）",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.zhexuan.a11",
+   "name": "情绪套利（Sentiment Arbitrage）——选题算法",
+   "version": "0.1.0",
+   "purpose": "选题 = 正在积累的集体情绪 × 无人权威发声的时刻。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "zhexuan-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "选题 = 正在积累的集体情绪 × 无人权威发声的时刻"
+   ],
+   "failure_modes": [
+    "追热点但无增量（情绪已有人接，你只是重复）；情绪判断错位（低估/高估集体情绪强度）。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "zhexuan-writing/references/atom-ops.md### 11. 情绪套利（Sentiment Arbitrage）——选题算法",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.zhexuan.a12",
+   "name": "平视共谋（Peer Positioning）",
+   "version": "0.1.0",
+   "purpose": "读者是\"我们一起想\"的共谋者，不是被教育对象。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "zhexuan-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "读者是\"我们一起想\"的共谋者，不是被教育对象"
+   ],
+   "failure_modes": [
+    "\"我们\"用得虚伪（立场其实已定）；给选择权只是客套（真的允许读者不同意的文章才叫平视——浙江宣传敢写《大人感》就是在替被评判者说话，立场是\"站\"出来的，不是\"说\"出来的）。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "zhexuan-writing/references/atom-ops.md### 12. 平视共谋（Peer Positioning）",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.jinyong.a1",
+   "name": "出场立人",
+   "version": "0.1.0",
+   "purpose": "人物第一次出现，用“一个动作 + 一处异处 + 一句话”三件套立住，此后读者一见这个特征就认出他。",
+   "family": "典型画像",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "jinyong-writing",
+    "family:典型画像"
+   ],
+   "procedure": [
+    "人物第一次出现，用“一个动作 + 一处异处 + 一句话”三件套立住，此后读者一见这个特征就认出他"
+   ],
+   "failure_modes": [
+    "开场先交代生平履历一大段；外貌堆形容词（“剑眉星目、器宇轩昂”）却没有动作。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "jinyong-writing/references/atom-ops.md### 1. 出场立人",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.jinyong.a2",
+   "name": "动作分镜",
+   "version": "0.1.0",
+   "purpose": "把打斗拆成镜头：谁在哪、离多远、出什么手、为什么这样出、结果是什么。快处连写，慢处停一拍写念头或旁观者。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "jinyong-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "把打斗拆成镜头：谁在哪、离多远、出什么手、为什么这样出、结果是什么",
+    "快处连写，慢处停一拍写念头或旁观者"
+   ],
+   "failure_modes": [
+    "“两人激战三百回合，难分胜负”；或招式连串却看不出空间位置与因果。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "jinyong-writing/references/atom-ops.md### 2. 动作分镜",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.jinyong.a3",
+   "name": "招式命名",
+   "version": "0.1.0",
+   "purpose": "给招式起有意象、有来历的名字，名字要和兵器、出身或性格相扣，且只在关键时刻点名。",
+   "family": "命名",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "jinyong-writing",
+    "family:命名"
+   ],
+   "procedure": [
+    "给招式起有意象、有来历的名字，名字要和兵器、出身或性格相扣，且只在关键时刻点名"
+   ],
+   "failure_modes": [
+    "名字堆砌玄乎字眼（“九天玄雷灭世斩”）；照搬原著招式名。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "jinyong-writing/references/atom-ops.md### 3. 招式命名",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.jinyong.a4",
+   "name": "悬念埋扣",
+   "version": "0.1.0",
+   "purpose": "早早抛出一个读者想知道、人物却不说的东西——一只匣子、一句没说完的话、一个旧约，然后压着不揭。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "jinyong-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "早早抛出一个读者想知道、人物却不说的东西——一只匣子、一句没说完的话、一个旧约，然后压着不揭"
+   ],
+   "failure_modes": [
+    "扣埋下去就忘了；或者刚埋就揭，没有压力。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "jinyong-writing/references/atom-ops.md### 4. 悬念埋扣",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.jinyong.a5",
+   "name": "反转揭底",
+   "version": "0.1.0",
+   "purpose": "在冲突顶点翻出身份、旧事或真相，让所有人的立场重新排一遍。一篇只翻一次大的。",
+   "family": "反转揭底",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "jinyong-writing",
+    "family:反转揭底"
+   ],
+   "procedure": [
+    "在冲突顶点翻出身份、旧事或真相，让所有人的立场重新排一遍",
+    "一篇只翻一次大的"
+   ],
+   "failure_modes": [
+    "反转没有铺垫，像天上掉下来；或连翻三次，读者不再相信。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "jinyong-writing/references/atom-ops.md### 5. 反转揭底",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.jinyong.a6",
+   "name": "群像江湖",
+   "version": "0.1.0",
+   "purpose": "一场戏里几方人各有立场和算盘，每人几笔就分出差别：鲁莽的先动手，精明的先说话，有心事的不动。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "jinyong-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "一场戏里几方人各有立场和算盘，每人几笔就分出差别：鲁莽的先动手，精明的先说话，有心事的不动"
+   ],
+   "failure_modes": [
+    "配角全是“众人大惊”；人多却没有一个有面目。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "jinyong-writing/references/atom-ops.md### 6. 群像江湖",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.jinyong.a7",
+   "name": "情义两难",
+   "version": "0.1.0",
+   "purpose": "让人物在私情与道义、旧恩与新仇之间只能选一边，选了就要付代价，作者不替他解围。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "jinyong-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "让人物在私情与道义、旧恩与新仇之间只能选一边，选了就要付代价，作者不替他解围"
+   ],
+   "failure_modes": [
+    "两难是假的，一边明显是坏人；最后靠巧合两全。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "jinyong-writing/references/atom-ops.md### 7. 情义两难",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.jinyong.a8",
+   "name": "历史嵌入",
+   "version": "0.1.0",
+   "purpose": "给故事一个真实的年号、战事或制度做背景，个人恩怨压在大势下。只取背景，不给真实人物编言行。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "jinyong-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "给故事一个真实的年号、战事或制度做背景，个人恩怨压在大势下",
+    "只取背景，不给真实人物编言行"
+   ],
+   "failure_modes": [
+    "大段史料讲课；给真实人物编造丑闻；年代细节张冠李戴。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "jinyong-writing/references/atom-ops.md### 8. 历史嵌入",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.jinyong.a9",
+   "name": "回目对仗",
+   "version": "0.1.0",
+   "purpose": "章节标题用对仗句，上下句各点一处情节，字数相等、词性相对，读之有画面。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "jinyong-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "章节标题用对仗句，上下句各点一处情节，字数相等、词性相对，读之有画面"
+   ],
+   "failure_modes": [
+    "上下句不对仗；回目剧透结局；照搬原著回目。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "jinyong-writing/references/atom-ops.md### 9. 回目对仗",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.jinyong.a10",
+   "name": "对白显性",
+   "version": "0.1.0",
+   "purpose": "每个人说话方式不同，遮住名字也听得出是谁。粗人短句，读书人带文气，市井人带俗话。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "jinyong-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "每个人说话方式不同，遮住名字也听得出是谁",
+    "粗人短句，读书人带文气，市井人带俗话"
+   ],
+   "failure_modes": [
+    "所有人一个腔调；对白靠“怒道”“冷笑道”撑性格。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "jinyong-writing/references/atom-ops.md### 10. 对白显性",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.lijuan.a1",
+   "name": "天真视角",
+   "version": "0.1.0",
+   "purpose": "叙述者以“不懂的人”自居，像第一次见到那样看一件事，问傻问题，得出孩子气的结论。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "lijuan-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "叙述者以“不懂的人”自居，像第一次见到那样看一件事，问傻问题，得出孩子气的结论"
+   ],
+   "failure_modes": [
+    "装嫩、卖萌，加“呜呜”“好可爱”；或者天真完马上补一句成年人的大道理。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "lijuan-writing/references/atom-ops.md### 1. 天真视角",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.lijuan.a2",
+   "name": "琐事铺满",
+   "version": "0.1.0",
+   "purpose": "把一件小事的步骤、数量、手感一样一样写足，不跳过，不概括。小事写满了，就有了分量。",
+   "family": "冷笔白描",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "lijuan-writing",
+    "family:冷笔白描"
+   ],
+   "procedure": [
+    "把一件小事的步骤、数量、手感一样一样写足，不跳过，不概括",
+    "小事写满了，就有了分量"
+   ],
+   "failure_modes": [
+    "写成流水账——步骤全有，却没有一个让人记住的细节（椭圆的那九张）。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "lijuan-writing/references/atom-ops.md### 2. 琐事铺满",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.lijuan.a3",
+   "name": "风物白描",
+   "version": "0.1.0",
+   "purpose": "写天、地、风、雪、草木，只用名词和动词，颜色和形状写准，不用“壮美”“辽阔”这类大词。",
+   "family": "冷笔白描",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "lijuan-writing",
+    "family:冷笔白描"
+   ],
+   "procedure": [
+    "写天、地、风、雪、草木，只用名词和动词，颜色和形状写准，不用“壮美”“辽阔”这类大词"
+   ],
+   "failure_modes": [
+    "堆形容词和四字词（“银装素裹”“美不胜收”），把风景写成旅游宣传。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "lijuan-writing/references/atom-ops.md### 3. 风物白描",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.lijuan.a4",
+   "name": "自嘲",
+   "version": "0.1.0",
+   "purpose": "把自己写得笨、怂、出糗，替读者先笑一声。自嘲让叙述者站在读者身边，而不是高处。",
+   "family": "自嘲",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "lijuan-writing",
+    "family:自嘲"
+   ],
+   "procedure": [
+    "把自己写得笨、怂、出糗，替读者先笑一声",
+    "自嘲让叙述者站在读者身边，而不是高处"
+   ],
+   "failure_modes": [
+    "自嘲变成自卖自夸（“我虽然笨，但我很真诚”），或者自贬到让人不舒服。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "lijuan-writing/references/atom-ops.md### 4. 自嘲",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.lijuan.a5",
+   "name": "家人喜剧",
+   "version": "0.1.0",
+   "purpose": "用白描写母亲、外婆等家人的言行，不评价，让她们的话和动作自己好笑；好笑里藏着心疼。",
+   "family": "冷笔白描",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "lijuan-writing",
+    "family:冷笔白描"
+   ],
+   "procedure": [
+    "用白描写母亲、外婆等家人的言行，不评价，让她们的话和动作自己好笑",
+    "好笑里藏着心疼"
+   ],
+   "failure_modes": [
+    "写成“我的母亲勤劳朴实”式的总结；或者把家人写成笑料，没有一点疼惜。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "lijuan-writing/references/atom-ops.md### 5. 家人喜剧",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.lijuan.a6",
+   "name": "一本正经的夸张",
+   "version": "0.1.0",
+   "purpose": "用实诚的数字、认真的语气，说一件明显夸大的事，或打一个离谱但贴身的比喻。",
+   "family": "正经夸张",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "lijuan-writing",
+    "family:正经夸张"
+   ],
+   "procedure": [
+    "用实诚的数字、认真的语气，说一件明显夸大的事，或打一个离谱但贴身的比喻"
+   ],
+   "failure_modes": [
+    "夸张变成网络段子腔（“直接笑死”“绝了”），失去实诚。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "lijuan-writing/references/atom-ops.md### 6. 一本正经的夸张",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.lijuan.a7",
+   "name": "拟人与对话万物",
+   "version": "0.1.0",
+   "purpose": "跟狗、植物、天气说话，替它们想事，把它们当作有脾气的邻居。",
+   "family": "比喻",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "lijuan-writing",
+    "family:比喻"
+   ],
+   "procedure": [
+    "跟狗、植物、天气说话，替它们想事，把它们当作有脾气的邻居"
+   ],
+   "failure_modes": [
+    "拟人成童话（小草对我微笑），甜腻；或者借动物讲大道理。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "lijuan-writing/references/atom-ops.md### 7. 拟人与对话万物",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.lijuan.a8",
+   "name": "镜头拉远",
+   "version": "0.1.0",
+   "purpose": "写着写着，突然把视角拉到更大的尺度——整片天、整座城、整个冬天——人和他的那点事一下子变得很小，但仍然认真。",
+   "family": "换层级",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "lijuan-writing",
+    "family:换层级"
+   ],
+   "procedure": [
+    "写着写着，突然把视角拉到更大的尺度——整片天、整座城、整个冬天——人和他的那点事一下子变得很小，但仍然认真"
+   ],
+   "failure_modes": [
+    "拉远之后开始抒情说理（“在宇宙面前我们多么渺小”）；或者一篇拉远好几次，失去分量。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "lijuan-writing/references/atom-ops.md### 8. 镜头拉远",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.lijuan.a9",
+   "name": "一句轻叹",
+   "version": "0.1.0",
+   "purpose": "情绪到了，只压成一句平常话，说完马上转回琐事，不展开。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "lijuan-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "情绪到了，只压成一句平常话，说完马上转回琐事，不展开"
+   ],
+   "failure_modes": [
+    "一叹再叹，连写三段感悟；或者用“原来”“终于明白”点题。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "lijuan-writing/references/atom-ops.md### 9. 一句轻叹",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.lijuan.a10",
+   "name": "停在动作上",
+   "version": "0.1.0",
+   "purpose": "结尾不总结、不升华，停在一个动作、一句话、一个画面上，让余味自己留下。",
+   "family": "不收的收尾",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "lijuan-writing",
+    "family:不收的收尾"
+   ],
+   "procedure": [
+    "结尾不总结、不升华，停在一个动作、一句话、一个画面上，让余味自己留下"
+   ],
+   "failure_modes": [
+    "最后一段来“这就是生活最美的样子”“愿我们都能……”。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "lijuan-writing/references/atom-ops.md### 10. 停在动作上",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.luxun.a1",
+   "name": "小处切入",
+   "version": "0.1.0",
+   "purpose": "从一个极小的东西起笔：一根胡须、一句骂人话、一张钞票。越小越好，小到读者没想过它值得写。",
+   "family": "小处起笔",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "luxun-writing",
+    "family:小处起笔"
+   ],
+   "procedure": [
+    "从一个极小的东西起笔：一根胡须、一句骂人话、一张钞票",
+    "越小越好，小到读者没想过它值得写"
+   ],
+   "failure_modes": [
+    "开头就是宏大判断（“当今社会存在一种不良风气”）。"
+   ],
+   "examples": [
+    "最近单位群里流行一句话：“收到。”不管通知说的是什么，下面齐刷刷一排“收到”，像一排站岗的兵。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "luxun-writing/references/atom-ops.md### 1. 小处切入",
+    "evidence": "《论“他妈的！”》从一句国骂写起，《说胡须》从胡须的翘法写起。"
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.luxun.a2",
+   "name": "正话反说",
+   "version": "0.1.0",
+   "purpose": "用夸奖、赞同的语气写批评，顺着对方的逻辑一路说下去，直到荒谬自己露出来。",
+   "family": "正经夸张",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "luxun-writing",
+    "family:正经夸张"
+   ],
+   "procedure": [
+    "用夸奖、赞同的语气写批评，顺着对方的逻辑一路说下去，直到荒谬自己露出来"
+   ],
+   "failure_modes": [
+    "反语太浅，读者第一眼就看穿，变成阴阳怪气。"
+   ],
+   "examples": [
+    "这真是一种了不起的效率。领导刚发完，三秒钟之内就有二十个“收到”，至于收到了什么，那是另一回事，不必深究的。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "luxun-writing/references/atom-ops.md### 2. 正话反说",
+    "evidence": "《拿来主义》里把“送去”说得堂堂皇皇，“还算显得一点进步了”。"
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.luxun.a3",
+   "name": "揭底一句",
+   "version": "0.1.0",
+   "purpose": "把绕了半天的现象，压成一句冷冰冰的本质判断。全文一到两句，放在论证的节点上。",
+   "family": "金句断语",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "luxun-writing",
+    "family:金句断语"
+   ],
+   "procedure": [
+    "把绕了半天的现象，压成一句冷冰冰的本质判断",
+    "全文一到两句，放在论证的节点上"
+   ],
+   "failure_modes": [
+    "每段都来一句，金句成灾。"
+   ],
+   "examples": [
+    "说到底，“收到”不是回复，是表态：我在，我没掉队，出了事别算我。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "luxun-writing/references/atom-ops.md### 3. 揭底一句",
+    "evidence": "《灯下漫笔》把历史分为“想做奴隶而不得的时代”和“暂时做稳了奴隶的时代”。"
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.luxun.a4",
+   "name": "类型化命名",
+   "version": "0.1.0",
+   "purpose": "给一种人或一种心态起个名字，名字一出，读者马上想起身边的人。",
+   "family": "命名",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "luxun-writing",
+    "family:命名"
+   ],
+   "procedure": [
+    "给一种人或一种心态起个名字，名字一出，读者马上想起身边的人"
+   ],
+   "failure_modes": [
+    "名字太长，或者指向某个真实的具体个人。"
+   ],
+   "examples": [
+    "我管这种人叫“收到派”。收到派从不反对，也从不执行，他们的全部工作，就是证明自己收到了。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "luxun-writing/references/atom-ops.md### 4. 类型化命名",
+    "evidence": "“叭儿狗”“看客”“二丑”。"
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.luxun.a5",
+   "name": "引其言而驳",
+   "version": "0.1.0",
+   "purpose": "先把对方的说法原原本本、甚至说得比他本人还周全地摆出来，再一条条拆。",
+   "family": "预设驳论",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "luxun-writing",
+    "family:预设驳论"
+   ],
+   "procedure": [
+    "先把对方的说法原原本本、甚至说得比他本人还周全地摆出来，再一条条拆"
+   ],
+   "failure_modes": [
+    "把对方说法歪曲成稻草人再打。"
+   ],
+   "examples": [
+    "有人说：“回个收到，是礼貌，是态度，总比不回强。”这话不错。可礼貌要是只剩下两个字，态度要是只用来给人看，那它和不回的区别，也就只有两个字了。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "luxun-writing/references/atom-ops.md### 5. 引其言而驳",
+    "evidence": "《“费厄泼赖”应该缓行》先承认“费厄泼赖”的好意，再说明对“落水狗”为什么不能讲。"
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.luxun.a6",
+   "name": "历史照今",
+   "version": "0.1.0",
+   "purpose": "拿一段古书、一件旧事照一照今天，发现换了衣服，骨头没变。",
+   "family": "古今对照",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "luxun-writing",
+    "family:古今对照"
+   ],
+   "procedure": [
+    "拿一段古书、一件旧事照一照今天，发现换了衣服，骨头没变"
+   ],
+   "failure_modes": [
+    "历史材料记不准就硬用。拿不准的史实不要写。"
+   ],
+   "examples": [
+    "翻旧书，清朝的奏折末尾常有“知道了”三个朱字。三百年过去，皇帝的“知道了”变成了科员的“收到”，写的人换了，意思倒差不多。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "luxun-writing/references/atom-ops.md### 6. 历史照今",
+    "evidence": "《灯下漫笔》从“一治一乱”的史书说到眼前。"
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.luxun.a7",
+   "name": "典型画像",
+   "version": "0.1.0",
+   "purpose": "几笔白描一个“这样的人”，有动作有口头禅，不点名，但人人能对号。",
+   "family": "典型画像",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "luxun-writing",
+    "family:典型画像"
+   ],
+   "procedure": [
+    "几笔白描一个“这样的人”，有动作有口头禅，不点名，但人人能对号"
+   ],
+   "failure_modes": [
+    "画得太细，变成对某个真实同事的影射。"
+   ],
+   "examples": [
+    "他手机不离手，群消息一响，眼睛还没看完第一行，拇指已经打出了“收到”。会开完，他问旁边的人：“刚才说的是哪天交？”"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "luxun-writing/references/atom-ops.md### 7. 典型画像",
+    "evidence": "《示众》里围着看的各色看客。"
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.luxun.a8",
+   "name": "自剖",
+   "version": "0.1.0",
+   "purpose": "把刀也对着自己，承认自己就在被批评的人群里。这让批评不居高临下。",
+   "family": "自嘲",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "luxun-writing",
+    "family:自嘲"
+   ],
+   "procedure": [
+    "把刀也对着自己，承认自己就在被批评的人群里",
+    "这让批评不居高临下"
+   ],
+   "failure_modes": [
+    "自剖成了自我表扬（“我虽然也这样，但我至少意识到了”）。"
+   ],
+   "examples": [
+    "写到这里我有点心虚。上周那个通知，我也回了“收到”，到现在也没打开附件。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "luxun-writing/references/atom-ops.md### 8. 自剖",
+    "evidence": "《一件小事》：车夫的背影“须仰视才见”，“而且他对于我，渐渐的又几乎变成一种威压，甚而至于要榨出皮袍下面藏着的‘小’来”。"
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.luxun.a9",
+   "name": "冷笔白描",
+   "version": "0.1.0",
+   "purpose": "在最该煽情的地方不煽情，只写动作、时间、数字，让读者自己发冷。",
+   "family": "冷笔白描",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "luxun-writing",
+    "family:冷笔白描"
+   ],
+   "procedure": [
+    "在最该煽情的地方不煽情，只写动作、时间、数字，让读者自己发冷"
+   ],
+   "failure_modes": [
+    "加形容词、加感叹号。"
+   ],
+   "examples": [
+    "通知是周五下午五点四十发的，要求周一上午九点前报材料。下面一共四十三个“收到”。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "luxun-writing/references/atom-ops.md### 9. 冷笔白描",
+    "evidence": "《秋夜》开篇写两株枣树的平淡句式；《记念刘和珍君》叙事段的克制。"
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.luxun.a10",
+   "name": "不收的收尾",
+   "version": "0.1.0",
+   "purpose": "结尾不升华、不给方案，留一句冷话或一个没有答案的问题。冷，但看得出在乎。",
+   "family": "不收的收尾",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "luxun-writing",
+    "family:不收的收尾"
+   ],
+   "procedure": [
+    "结尾不升华、不给方案，留一句冷话或一个没有答案的问题",
+    "冷，但看得出在乎"
+   ],
+   "failure_modes": [
+    "结尾突然光明（“相信大家都会改变”），或三连排比号召。"
+   ],
+   "examples": [
+    "我不知道这样下去会怎样。我只知道，下一次群里再有通知，我的拇指大概还是会先动。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "luxun-writing/references/atom-ops.md### 10. 不收的收尾",
+    "evidence": "《狂人日记》结尾“救救孩子……”。"
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.mao.a1",
+   "name": "开门见山",
+   "version": "0.1.0",
+   "purpose": "第一句提出问题或亮出论点，读者一眼知道这篇要解决什么。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "mao-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "第一句提出问题或亮出论点，读者一眼知道这篇要解决什么"
+   ],
+   "failure_modes": [
+    "先写三段背景和“随着时代的发展”。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "mao-writing/references/atom-ops.md### 1. 开门见山",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.mao.a2",
+   "name": "分类剖析",
+   "version": "0.1.0",
+   "purpose": "按一个标准把对象分成几类，逐类说明各自的情况和态度。",
+   "family": "分类拆解",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "mao-writing",
+    "family:分类拆解"
+   ],
+   "procedure": [
+    "按一个标准把对象分成几类，逐类说明各自的情况和态度"
+   ],
+   "failure_modes": [
+    "分类标准混乱，类与类之间有交叉。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "mao-writing/references/atom-ops.md### 2. 分类剖析",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.mao.a3",
+   "name": "分条列举",
+   "version": "0.1.0",
+   "purpose": "把问题或办法编成“第一、第二、第三”，每条一个小标题式的短句再展开。",
+   "family": "分类拆解",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "mao-writing",
+    "family:分类拆解"
+   ],
+   "procedure": [
+    "把问题或办法编成“第一、第二、第三”，每条一个小标题式的短句再展开"
+   ],
+   "failure_modes": [
+    "条目之间大小不一，或只有一条也硬编号。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "mao-writing/references/atom-ops.md### 3. 分条列举",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.mao.a4",
+   "name": "俗语比喻",
+   "version": "0.1.0",
+   "purpose": "用民间俗语、日常生活的比喻，把抽象道理说成看得见的事。",
+   "family": "比喻",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "mao-writing",
+    "family:比喻"
+   ],
+   "procedure": [
+    "用民间俗语、日常生活的比喻，把抽象道理说成看得见的事"
+   ],
+   "failure_modes": [
+    "比喻和论点对不上；一段里塞三个比喻。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "mao-writing/references/atom-ops.md### 4. 俗语比喻",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.mao.a5",
+   "name": "两点论",
+   "version": "0.1.0",
+   "purpose": "一分为二地看问题，先承认另一面，再指出哪一面是主要的。",
+   "family": "预设驳论",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "mao-writing",
+    "family:预设驳论"
+   ],
+   "procedure": [
+    "一分为二地看问题，先承认另一面，再指出哪一面是主要的"
+   ],
+   "failure_modes": [
+    "各打五十大板，不说哪一面是主要的。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "mao-writing/references/atom-ops.md### 5. 两点论",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.mao.a6",
+   "name": "反面典型",
+   "version": "0.1.0",
+   "purpose": "白描一种错误作风，可以起个好记的名字；只写做法，不点真名。",
+   "family": "典型画像",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "mao-writing",
+    "family:典型画像"
+   ],
+   "procedure": [
+    "白描一种错误作风，可以起个好记的名字",
+    "只写做法，不点真名"
+   ],
+   "failure_modes": [
+    "影射真实同事；把作风扩大成某类人群。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "mao-writing/references/atom-ops.md### 6. 反面典型",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.mao.a7",
+   "name": "正面榜样",
+   "version": "0.1.0",
+   "purpose": "用一个具体的人或一件具体的事立标杆，说明“应该这样做”。",
+   "family": "典型画像",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "mao-writing",
+    "family:典型画像"
+   ],
+   "procedure": [
+    "用一个具体的人或一件具体的事立标杆，说明“应该这样做”"
+   ],
+   "failure_modes": [
+    "榜样写成完人，或编造用户没提供的真实人物经历。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "mao-writing/references/atom-ops.md### 7. 正面榜样",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.mao.a8",
+   "name": "预设驳论",
+   "version": "0.1.0",
+   "purpose": "先把可能的反对意见说出来，承认其合理处，再回答。",
+   "family": "预设驳论",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "mao-writing",
+    "family:预设驳论"
+   ],
+   "procedure": [
+    "先把可能的反对意见说出来，承认其合理处，再回答"
+   ],
+   "failure_modes": [
+    "把反对意见说得很蠢，变成稻草人。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "mao-writing/references/atom-ops.md### 8. 预设驳论",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.mao.a9",
+   "name": "短句排比",
+   "version": "0.1.0",
+   "purpose": "几个结构相同的短句连用，一句推一句，节奏快，力量足。",
+   "family": "排比/三段",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "mao-writing",
+    "family:排比/三段"
+   ],
+   "procedure": [
+    "几个结构相同的短句连用，一句推一句，节奏快，力量足"
+   ],
+   "failure_modes": [
+    "排比太长，每句二十字以上；全文到处排比。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "mao-writing/references/atom-ops.md### 9. 短句排比",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.mao.a10",
+   "name": "亲切号召",
+   "version": "0.1.0",
+   "purpose": "结尾提出具体、可做的要求，语气平实，像商量而不像命令。",
+   "family": "号召落点",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "mao-writing",
+    "family:号召落点"
+   ],
+   "procedure": [
+    "结尾提出具体、可做的要求，语气平实，像商量而不像命令"
+   ],
+   "failure_modes": [
+    "空喊“让我们携手共进”；号召大而无当。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "mao-writing/references/atom-ops.md### 10. 亲切号召",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.guanfang.a1",
+   "name": "高位定调",
+   "version": "0.1.0",
+   "purpose": "首段即给出全局性判断，把一个议题放进国家、时代或人民的大坐标里，先立后论。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "guanfang-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "首段即给出全局性判断，把一个议题放进国家、时代或人民的大坐标里，先立后论"
+   ],
+   "failure_modes": [
+    "定调太空（“意义重大，影响深远”），或定调后再无支撑。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "guanfang-writing/references/atom-ops.md### 1. 高位定调",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.guanfang.a2",
+   "name": "时空坐标",
+   "version": "0.1.0",
+   "purpose": "用时间节点、发展阶段、周年纪念标定“此刻”的方位，让读者知道这篇话为什么现在说。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "guanfang-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "用时间节点、发展阶段、周年纪念标定“此刻”的方位，让读者知道这篇话为什么现在说"
+   ],
+   "failure_modes": [
+    "节点写错（周年数、届次、日期），或节点与议题无关。时间节点必须核对。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "guanfang-writing/references/atom-ops.md### 2. 时空坐标",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.guanfang.a3",
+   "name": "历史纵深",
+   "version": "0.1.0",
+   "purpose": "从古代典籍、党史、新中国史、改革开放史中取一段来路，证明今天的选择有根有据。",
+   "family": "古今对照",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "guanfang-writing",
+    "family:古今对照"
+   ],
+   "procedure": [
+    "从古代典籍、党史、新中国史、改革开放史中取一段来路，证明今天的选择有根有据"
+   ],
+   "failure_modes": [
+    "史实不准、年代张冠李戴、引用伪托的古语。拿不准的史实不写。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "guanfang-writing/references/atom-ops.md### 3. 历史纵深",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.guanfang.a4",
+   "name": "数据并举",
+   "version": "0.1.0",
+   "purpose": "一组有出处的数据与判断并列，数据为判断“压秤”；常以“从……到……”呈现变化。",
+   "family": "数据压舱",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "guanfang-writing",
+    "family:数据压舱"
+   ],
+   "procedure": [
+    "一组有出处的数据与判断并列，数据为判断“压秤”",
+    "常以“从……到……”呈现变化"
+   ],
+   "failure_modes": [
+    "编造数据、来源不明、口径不一；数据堆砌而无判断。**没有可靠来源，一律写【待核】。**"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "guanfang-writing/references/atom-ops.md### 4. 数据并举",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.guanfang.a5",
+   "name": "以小见大",
+   "version": "0.1.0",
+   "purpose": "用一个具体的人、一个村、一座厂、一间实验室，把宏大命题落到地面上，赋予温度。",
+   "family": "小处起笔",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "guanfang-writing",
+    "family:小处起笔"
+   ],
+   "procedure": [
+    "用一个具体的人、一个村、一座厂、一间实验室，把宏大命题落到地面上，赋予温度"
+   ],
+   "failure_modes": [
+    "人物“完美化”、细节失真；编造真实姓名与单位冒充新闻事实。虚构示例须注明“示例”。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "guanfang-writing/references/atom-ops.md### 5. 以小见大",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.guanfang.a6",
+   "name": "四字格凝练",
+   "version": "0.1.0",
+   "purpose": "用四字短语压缩论点，二到四个成组，形成庄重的节拍。",
+   "family": "金句断语",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "guanfang-writing",
+    "family:金句断语"
+   ],
+   "procedure": [
+    "用四字短语压缩论点，二到四个成组，形成庄重的节拍"
+   ],
+   "failure_modes": [
+    "生造四字词；连用超过四个变成堆砌；四字格替代了具体内容。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "guanfang-writing/references/atom-ops.md### 6. 四字格凝练",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.guanfang.a7",
+   "name": "对仗收束",
+   "version": "0.1.0",
+   "purpose": "用上下对称、意义互补的句子收束一段或一层，便于记忆。",
+   "family": "金句断语",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "guanfang-writing",
+    "family:金句断语"
+   ],
+   "procedure": [
+    "用上下对称、意义互补的句子收束一段或一层，便于记忆"
+   ],
+   "failure_modes": [
+    "为对而对，上下句意思重复；全文每段都对仗，失去呼吸。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "guanfang-writing/references/atom-ops.md### 7. 对仗收束",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.guanfang.a8",
+   "name": "排比递进",
+   "version": "0.1.0",
+   "purpose": "三到五个同构句或同构段落，语义由近及远、由小到大、由个体到国家逐级抬升。",
+   "family": "排比/三段",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "guanfang-writing",
+    "family:排比/三段"
+   ],
+   "procedure": [
+    "三到五个同构句或同构段落，语义由近及远、由小到大、由个体到国家逐级抬升"
+   ],
+   "failure_modes": [
+    "平行而不递进（三句一个意思）；排比过长过密，变成口号。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "guanfang-writing/references/atom-ops.md### 8. 排比递进",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.guanfang.a9",
+   "name": "辩证回应",
+   "version": "0.1.0",
+   "purpose": "正面承认困难、质疑或两难，再给出更高一层的回答。这让文章有分量，不是一味唱赞歌。",
+   "family": "预设驳论",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "guanfang-writing",
+    "family:预设驳论"
+   ],
+   "procedure": [
+    "正面承认困难、质疑或两难，再给出更高一层的回答",
+    "这让文章有分量，不是一味唱赞歌"
+   ],
+   "failure_modes": [
+    "只立靶子不回答；回应流于“相信一定能解决”；把问题推给个人道德。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "guanfang-writing/references/atom-ops.md### 9. 辩证回应",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.guanfang.a10",
+   "name": "号召落点",
+   "version": "0.1.0",
+   "purpose": "结尾回到“我们”和“行动”，由前文的历史与事实推出信心与方向。",
+   "family": "号召落点",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "guanfang-writing",
+    "family:号召落点"
+   ],
+   "procedure": [
+    "结尾回到“我们”和“行动”，由前文的历史与事实推出信心与方向"
+   ],
+   "failure_modes": [
+    "凭空号召，与前文脱节；号召中出现编造的讲话或提法；口号叠口号。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "guanfang-writing/references/atom-ops.md### 10. 号召落点",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.standup.a1",
+   "name": "观察切口",
+   "version": "0.1.0",
+   "purpose": "从一个人人经历过、但没人说破的日常细节起笔。越具体越好，具体到观众心里“对对对”。",
+   "family": "小处起笔",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "standup-writing",
+    "family:小处起笔"
+   ],
+   "procedure": [
+    "从一个人人经历过、但没人说破的日常细节起笔",
+    "越具体越好，具体到观众心里“对对对”"
+   ],
+   "failure_modes": [
+    "切口太大（“现在的年轻人压力都很大”），观众无从共鸣。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "standup-writing/references/atom-ops.md### 1. 观察切口",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.standup.a2",
+   "name": "铺垫-包袱",
+   "version": "0.1.0",
+   "purpose": "前一句建立一个合理预期，后一句用最短的词把预期掀翻。铺垫要让人信，包袱要让人没想到但马上懂。",
+   "family": "反转揭底",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "standup-writing",
+    "family:反转揭底"
+   ],
+   "procedure": [
+    "前一句建立一个合理预期，后一句用最短的词把预期掀翻",
+    "铺垫要让人信，包袱要让人没想到但马上懂"
+   ],
+   "failure_modes": [
+    "包袱前就泄底，或者包袱后再补一句解释。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "standup-writing/references/atom-ops.md### 2. 铺垫-包袱",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.standup.a3",
+   "name": "反转",
+   "version": "0.1.0",
+   "purpose": "不是掀翻一句话，而是把整段的逻辑翻面——受害者变成加害者，原因变成结果。",
+   "family": "反转揭底",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "standup-writing",
+    "family:反转揭底"
+   ],
+   "procedure": [
+    "不是掀翻一句话，而是把整段的逻辑翻面——受害者变成加害者，原因变成结果"
+   ],
+   "failure_modes": [
+    "反转太突然，没有前面的铺垫支撑，观众只觉得乱。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "standup-writing/references/atom-ops.md### 3. 反转",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.standup.a4",
+   "name": "三段式",
+   "version": "0.1.0",
+   "purpose": "前两个例子建立规律，第三个例子按规律的形状出现，内容却破坏它。",
+   "family": "排比/三段",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "standup-writing",
+    "family:排比/三段"
+   ],
+   "procedure": [
+    "前两个例子建立规律，第三个例子按规律的形状出现，内容却破坏它"
+   ],
+   "failure_modes": [
+    "第三项不够“歪”，或者列到第四、第五项把节奏拖垮。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "standup-writing/references/atom-ops.md### 4. 三段式",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.standup.a5",
+   "name": "自嘲",
+   "version": "0.1.0",
+   "purpose": "把自己放在被笑的位置，先降低身段，观众才愿意跟你一起笑别的东西。",
+   "family": "自嘲",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "standup-writing",
+    "family:自嘲"
+   ],
+   "procedure": [
+    "把自己放在被笑的位置，先降低身段，观众才愿意跟你一起笑别的东西"
+   ],
+   "failure_modes": [
+    "自嘲变卖惨，观众开始心疼而不是笑；或自嘲后紧跟自夸。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "standup-writing/references/atom-ops.md### 5. 自嘲",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.standup.a6",
+   "name": "夸张推演",
+   "version": "0.1.0",
+   "purpose": "接受一个小前提，然后一本正经地往下推，推到荒诞的终点。",
+   "family": "正经夸张",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "standup-writing",
+    "family:正经夸张"
+   ],
+   "procedure": [
+    "接受一个小前提，然后一本正经地往下推，推到荒诞的终点"
+   ],
+   "failure_modes": [
+    "每一步跳得太远，观众跟不上；或推到最后没有落点。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "standup-writing/references/atom-ops.md### 6. 夸张推演",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.standup.a7",
+   "name": "act-out",
+   "version": "0.1.0",
+   "purpose": "不描述，直接演——演一个角色、一个物件、自己的内心戏。稿子里用（）提示。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "standup-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "不描述，直接演——演一个角色、一个物件、自己的内心戏",
+    "稿子里用（）提示"
+   ],
+   "failure_modes": [
+    "提示写成舞台剧本，满篇括号；或演的内容没有包袱。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "standup-writing/references/atom-ops.md### 7. act-out",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.standup.a8",
+   "name": "callback",
+   "version": "0.1.0",
+   "purpose": "后文回扣前文的一个词、一个梗，在新语境里再响一次。观众会因为“我记得”而笑得更大。",
+   "family": "回环呼应",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "standup-writing",
+    "family:回环呼应"
+   ],
+   "procedure": [
+    "后文回扣前文的一个词、一个梗，在新语境里再响一次",
+    "观众会因为“我记得”而笑得更大"
+   ],
+   "failure_modes": [
+    "回扣的梗前面没埋稳，或间隔太短像重复。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "standup-writing/references/atom-ops.md### 8. callback",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.standup.a9",
+   "name": "类比错位",
+   "version": "0.1.0",
+   "purpose": "用一个完全不相干的领域来比喻，比得越精确、越认真，就越好笑。",
+   "family": "比喻",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "standup-writing",
+    "family:比喻"
+   ],
+   "procedure": [
+    "用一个完全不相干的领域来比喻，比得越精确、越认真，就越好笑"
+   ],
+   "failure_modes": [
+    "比喻需要解释才懂，或只是普通修辞没有落差。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "standup-writing/references/atom-ops.md### 9. 类比错位",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.standup.a10",
+   "name": "短句落点",
+   "version": "0.1.0",
+   "purpose": "包袱句压到十字以内，最后一个字落在有分量的名词或动词上，说完就停。",
+   "family": "金句断语",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "standup-writing",
+    "family:金句断语"
+   ],
+   "procedure": [
+    "包袱句压到十字以内，最后一个字落在有分量的名词或动词上，说完就停"
+   ],
+   "failure_modes": [
+    "包袱句里塞修饰语和语气词，或把笑点词放在句中而不是句尾。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "standup-writing/references/atom-ops.md### 10. 短句落点",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sushi.a1",
+   "name": "即事起兴",
+   "version": "0.1.0",
+   "purpose": "用一句交代时间、地点、事由，马上进入，不铺垫。",
+   "family": "小处起笔",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sushi-writing",
+    "family:小处起笔"
+   ],
+   "procedure": [
+    "用一句交代时间、地点、事由，马上进入，不铺垫"
+   ],
+   "failure_modes": [
+    "开头先发一段感慨（“人这一生啊……”），或先交代背景三百字。"
+   ],
+   "examples": [
+    "周四晚上十一点，刚洗完澡准备睡，窗外的月亮亮得不像话，我又把外套穿上了。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sushi-writing/references/atom-ops.md### 1. 即事起兴",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sushi.a2",
+   "name": "闲人自认",
+   "version": "0.1.0",
+   "purpose": "坦然承认自己闲、没用、不合时宜，把它变成能看见好东西的资格。",
+   "family": "自嘲",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sushi-writing",
+    "family:自嘲"
+   ],
+   "procedure": [
+    "坦然承认自己闲、没用、不合时宜，把它变成能看见好东西的资格"
+   ],
+   "failure_modes": [
+    "把“闲”写成炫耀，或写成苦大仇深的自我贬低。"
+   ],
+   "examples": [
+    "哪天晚上没有月亮呢？哪个小区没几棵树呢？只是像我俩这样大半夜不睡、跑下楼看月亮的闲人不多罢了。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sushi-writing/references/atom-ops.md### 2. 闲人自认",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sushi.a3",
+   "name": "窘中写乐",
+   "version": "0.1.0",
+   "purpose": "先老实写处境的不堪，再在其中找出一点能乐的地方，不回避也不卖惨。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sushi-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "先老实写处境的不堪，再在其中找出一点能乐的地方，不回避也不卖惨"
+   ],
+   "failure_modes": [
+    "只写苦不写乐（变成诉苦文），或只写乐不写苦（变成凡尔赛）。"
+   ],
+   "examples": [
+    "工资到账那天，我把这个月的饭钱分成三十份，存进三十个红包里，每天早上拆一个。拆到月底，居然还剩两个，够请朋友吃顿烧烤。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sushi-writing/references/atom-ops.md### 3. 窘中写乐",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sushi.a4",
+   "name": "主客问答",
+   "version": "0.1.0",
+   "purpose": "安排一个“客”（朋友、同事、另一个自己）说出常人的悲观，作者再从容回答。悲观要说得有道理。",
+   "family": "预设驳论",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sushi-writing",
+    "family:预设驳论"
+   ],
+   "procedure": [
+    "安排一个“客”（朋友、同事、另一个自己）说出常人的悲观，作者再从容回答",
+    "悲观要说得有道理"
+   ],
+   "failure_modes": [
+    "客的悲观太弱，像稻草人；作者的回答像上课。"
+   ],
+   "examples": [
+    "老周喝了一口啤酒说：“咱俩干到四十岁，还在这楼里改PPT，这江倒是流了几千年。”我说：“你看这江水，一直在走，可也一直在这儿。”"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sushi-writing/references/atom-ops.md### 4. 主客问答",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sushi.a5",
+   "name": "变与不变",
+   "version": "0.1.0",
+   "purpose": "换一个尺度看同一件事。拉长或缩短时间，放大或缩小空间，原来的焦虑自己就松了。",
+   "family": "换层级",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sushi-writing",
+    "family:换层级"
+   ],
+   "procedure": [
+    "换一个尺度看同一件事",
+    "拉长或缩短时间，放大或缩小空间，原来的焦虑自己就松了"
+   ],
+   "failure_modes": [
+    "换尺度换成“宇宙那么大，你算什么”，那是虚无，不是通透。"
+   ],
+   "examples": [
+    "要是按天算，这个季度的指标确实要命；要是按十年算，谁还记得今年第三季度报了多少？"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sushi-writing/references/atom-ops.md### 5. 变与不变",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sushi.a6",
+   "name": "转念一歇",
+   "version": "0.1.0",
+   "purpose": "写身体上的累、走不动、卡住，然后突然一个念头想通，当下就放下。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sushi-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "写身体上的累、走不动、卡住，然后突然一个念头想通，当下就放下"
+   ],
+   "failure_modes": [
+    "转念来得太早（没写够累），或者转完念又开始讲大道理。"
+   ],
+   "examples": [
+    "爬到半山腰，腿已经不是我的了。抬头看，山顶的亭子还在树梢上挂着。我忽然想：谁规定非得到山顶才能歇？就在这台阶上坐下了。那一下，像钩上的鱼忽然脱了钩。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sushi-writing/references/atom-ops.md### 6. 转念一歇",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sushi.a7",
+   "name": "物各有主",
+   "version": "0.1.0",
+   "purpose": "承认好东西大多不归自己，转而珍惜那些不要钱、谁都能享用的东西。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sushi-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "承认好东西大多不归自己，转而珍惜那些不要钱、谁都能享用的东西"
+   ],
+   "failure_modes": [
+    "写成仇富，或写成假装不在乎。"
+   ],
+   "examples": [
+    "江边那排房子，一套顶我三十年工资，我连想都不想。可这江风是不要钱的，傍晚的晚霞也不收门票，我天天来，谁也拦不住。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sushi-writing/references/atom-ops.md### 7. 物各有主",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sushi.a8",
+   "name": "自嘲收束",
+   "version": "0.1.0",
+   "purpose": "结尾不升华，用一句打趣自己的家常话落地，让前面的通透显得不端着。",
+   "family": "自嘲",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sushi-writing",
+    "family:自嘲"
+   ],
+   "procedure": [
+    "结尾不升华，用一句打趣自己的家常话落地，让前面的通透显得不端着"
+   ],
+   "failure_modes": [
+    "结尾一句金句（“愿你……”），或三连排比表态。"
+   ],
+   "examples": [
+    "聊到最后，烧烤也吃完了，两个人横七竖八歪在江边长椅上，等醒过来，天已经亮了，环卫阿姨正绕着我们扫地。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sushi-writing/references/atom-ops.md### 8. 自嘲收束",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sushi.a9",
+   "name": "翻一层（少量用）",
+   "version": "0.1.0",
+   "purpose": "对一个人人都这么说的看法，轻轻翻过来，给一个更深一层的理解。语气平和，不抬杠。",
+   "family": "换层级",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sushi-writing",
+    "family:换层级"
+   ],
+   "procedure": [
+    "对一个人人都这么说的看法，轻轻翻过来，给一个更深一层的理解",
+    "语气平和，不抬杠"
+   ],
+   "failure_modes": [
+    "为翻而翻，变成杠精。"
+   ],
+   "examples": [
+    "都说那位老师傅脾气怪，徒弟递错一次扳手就骂半天。我后来才明白，他骂的不是扳手。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sushi-writing/references/atom-ops.md### 9. 翻一层（少量用）",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sushi.a10",
+   "name": "亲证存疑",
+   "version": "0.1.0",
+   "purpose": "对道听途说不急着信，也不急着驳，自己去看一眼，看完再下结论，并笑一笑过去的轻信。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sushi-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "对道听途说不急着信，也不急着驳，自己去看一眼，看完再下结论，并笑一笑过去的轻信"
+   ],
+   "failure_modes": [
+    "只有结论没有“去看”的过程。"
+   ],
+   "examples": [
+    "网上都说那家面馆要排两小时。周六我七点就去了，前面只有一个人。吃完我想，很多“听说”，其实就是没人去看一眼。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sushi-writing/references/atom-ops.md### 10. 亲证存疑",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.wangxiaobo.a1",
+   "name": "一本正经推演",
+   "version": "0.1.0",
+   "purpose": "把一个荒唐的前提当真，像做数学题一样一步步推下去，每一步都合理，合起来却荒谬。作者全程不笑。",
+   "family": "正经夸张",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "wangxiaobo-writing",
+    "family:正经夸张"
+   ],
+   "procedure": [
+    "把一个荒唐的前提当真，像做数学题一样一步步推下去，每一步都合理，合起来却荒谬",
+    "作者全程不笑"
+   ],
+   "failure_modes": [
+    "推一步就跳出来嘲讽，逻辑链断掉，变成吐槽。"
+   ],
+   "examples": [
+    "假如签到越多，学习效果越好，那么最好的学习方法就是一天签十次到。再往下推，签到的人最好不必来，因为来了要占座位，影响别人签到。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "wangxiaobo-writing/references/atom-ops.md### 1. 一本正经推演",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.wangxiaobo.a2",
+   "name": "亲历小事起笔",
+   "version": "0.1.0",
+   "purpose": "从“我”经历过的一件具体小事开头，语气平淡，像在跟朋友聊天。",
+   "family": "小处起笔",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "wangxiaobo-writing",
+    "family:小处起笔"
+   ],
+   "procedure": [
+    "从“我”经历过的一件具体小事开头，语气平淡，像在跟朋友聊天"
+   ],
+   "failure_modes": [
+    "替用户编一段不存在的经历；或开头就是宏论。"
+   ],
+   "examples": [
+    "上个月我们单位开了一次读书分享会，我负责拍照。会开了四十分钟，我拍了三百张。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "wangxiaobo-writing/references/atom-ops.md### 2. 亲历小事起笔",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.wangxiaobo.a3",
+   "name": "科学类比",
+   "version": "0.1.0",
+   "purpose": "用物理、数学、统计、实验方法、逻辑学的常识，给社会现象打比方，以理服人又好笑。",
+   "family": "比喻",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "wangxiaobo-writing",
+    "family:比喻"
+   ],
+   "procedure": [
+    "用物理、数学、统计、实验方法、逻辑学的常识，给社会现象打比方，以理服人又好笑"
+   ],
+   "failure_modes": [
+    "科学知识讲错；类比太专业，读者看不懂。"
+   ],
+   "examples": [
+    "这就像拿温度计去量一锅汤咸不咸。仪器很精密，读数很漂亮，只是量错了东西。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "wangxiaobo-writing/references/atom-ops.md### 3. 科学类比",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.wangxiaobo.a4",
+   "name": "动物寓言",
+   "version": "0.1.0",
+   "purpose": "借动物的处境照见人，认真地写动物的“选择”和“尊严”，说得比写人还郑重。",
+   "family": "比喻",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "wangxiaobo-writing",
+    "family:比喻"
+   ],
+   "procedure": [
+    "借动物的处境照见人，认真地写动物的“选择”和“尊严”，说得比写人还郑重"
+   ],
+   "failure_modes": [
+    "寓意直接点破（“这只鸭子就是我们每个人”），寓言变成标语。"
+   ],
+   "examples": [
+    "我见过一只鸭子，饲养员给它划了一条跑道，它偏要从花坛中间穿过去。从效率上说，它是对的；从管理上说，它就成了问题鸭。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "wangxiaobo-writing/references/atom-ops.md### 4. 动物寓言",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.wangxiaobo.a5",
+   "name": "有趣尺度",
+   "version": "0.1.0",
+   "purpose": "把“有趣”“思维的乐趣”当成一个正经的价值标准：一件事让人不能思考、无聊，这本身就是反对它的理由。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "wangxiaobo-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "把“有趣”“思维的乐趣”当成一个正经的价值标准：一件事让人不能思考、无聊，这本身就是反对它的理由"
+   ],
+   "failure_modes": [
+    "把“有趣”写成鸡汤（“生活要有趣”），丢了它的批判锋芒。"
+   ],
+   "examples": [
+    "我反对这种会，并不是因为它浪费时间——浪费时间的事我干得多了——而是因为它太无趣，无趣到连走神都找不到地方。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "wangxiaobo-writing/references/atom-ops.md### 5. 有趣尺度",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.wangxiaobo.a6",
+   "name": "自嘲垫底",
+   "version": "0.1.0",
+   "purpose": "叙述者先把自己放低：笨、懒、胆小、也随大流。道理从一个普通人嘴里说出来，才不居高临下。",
+   "family": "自嘲",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "wangxiaobo-writing",
+    "family:自嘲"
+   ],
+   "procedure": [
+    "叙述者先把自己放低：笨、懒、胆小、也随大流",
+    "道理从一个普通人嘴里说出来，才不居高临下"
+   ],
+   "failure_modes": [
+    "自嘲变成炫耀（“我虽然笨，但我看透了”）。"
+   ],
+   "examples": [
+    "我这人数学不好，算不清一张照片值多少学习成果，只好老老实实地数照片。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "wangxiaobo-writing/references/atom-ops.md### 6. 自嘲垫底",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.wangxiaobo.a7",
+   "name": "沉默者立场",
+   "version": "0.1.0",
+   "purpose": "说明自己不属于任何一种响亮的话语，不站队，只是把看到的说出来。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "wangxiaobo-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "说明自己不属于任何一种响亮的话语，不站队，只是把看到的说出来"
+   ],
+   "failure_modes": [
+    "把“沉默”写成清高，或写成新的口号。"
+   ],
+   "examples": [
+    "我既不想表扬这场会，也不想批判它。表扬和批判都要先站到台上去，而我只想坐在下面，把照片的张数说清楚。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "wangxiaobo-writing/references/atom-ops.md### 7. 沉默者立场",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.wangxiaobo.a8",
+   "name": "戏仿腔调",
+   "version": "0.1.0",
+   "purpose": "把口号、官腔、大词原样搬出来，放到具体琐碎的场景里认真使用，大词自己就显出空来。",
+   "family": "正经夸张",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "wangxiaobo-writing",
+    "family:正经夸张"
+   ],
+   "procedure": [
+    "把口号、官腔、大词原样搬出来，放到具体琐碎的场景里认真使用，大词自己就显出空来"
+   ],
+   "failure_modes": [
+    "戏仿变成辱骂；或拿具体文件、具体单位开涮。"
+   ],
+   "examples": [
+    "按照“全过程留痕”的要求，我连会议室的空调遥控器都拍了一张，以证明它也全程参与了学习。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "wangxiaobo-writing/references/atom-ops.md### 8. 戏仿腔调",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.wangxiaobo.a9",
+   "name": "平静说荒唐",
+   "version": "0.1.0",
+   "purpose": "荒唐的事用平稳、甚至温和的语气讲出来，不加惊叹、不加评语，让读者自己发笑。",
+   "family": "正经夸张",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "wangxiaobo-writing",
+    "family:正经夸张"
+   ],
+   "procedure": [
+    "荒唐的事用平稳、甚至温和的语气讲出来，不加惊叹、不加评语，让读者自己发笑"
+   ],
+   "failure_modes": [
+    "加“竟然”“简直”“太离谱了”，把笑点说破。"
+   ],
+   "examples": [
+    "主持人说，请大家放下手机，认真交流。然后他举起手机，拍了一张大家放下手机的照片。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "wangxiaobo-writing/references/atom-ops.md### 9. 平静说荒唐",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.wangxiaobo.a10",
+   "name": "俏皮收尾",
+   "version": "0.1.0",
+   "purpose": "结尾不升华、不号召，用一个顺着推理来的轻巧结论或一句自嘲收住。",
+   "family": "不收的收尾",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "wangxiaobo-writing",
+    "family:不收的收尾"
+   ],
+   "procedure": [
+    "结尾不升华、不号召，用一个顺着推理来的轻巧结论或一句自嘲收住"
+   ],
+   "failure_modes": [
+    "结尾突然严肃（“这值得我们深思”），或三连排比。"
+   ],
+   "examples": [
+    "下次再开这样的会，我建议只派一台相机去。它不会走神，也不会写心得，效率比我高多了。"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "wangxiaobo-writing/references/atom-ops.md### 10. 俏皮收尾",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.wangzengqi.a1",
+   "name": "闲闲起笔",
+   "version": "0.1.0",
+   "purpose": "开头不点题，从一个地方、一样东西、一句闲话随便说起，读者不知道要写什么，却愿意听下去。",
+   "family": "小处起笔",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "wangzengqi-writing",
+    "family:小处起笔"
+   ],
+   "procedure": [
+    "开头不点题，从一个地方、一样东西、一句闲话随便说起，读者不知道要写什么，却愿意听下去"
+   ],
+   "failure_modes": [
+    "开头就抒情点题（“食堂承载了我太多回忆”）。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "wangzengqi-writing/references/atom-ops.md### 1. 闲闲起笔",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.wangzengqi.a2",
+   "name": "名物说解",
+   "version": "0.1.0",
+   "purpose": "像个懂行的老熟人，说这东西叫什么、各地怎么叫、怎么做、怎么吃、哪里的好。知识是家常的，不是百科。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "wangzengqi-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "像个懂行的老熟人，说这东西叫什么、各地怎么叫、怎么做、怎么吃、哪里的好",
+    "知识是家常的，不是百科"
+   ],
+   "failure_modes": [
+    "抄百科（“荠菜富含维生素C”），或写成测评（“口感层次丰富”）。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "wangzengqi-writing/references/atom-ops.md### 2. 名物说解",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.wangzengqi.a3",
+   "name": "手艺细写",
+   "version": "0.1.0",
+   "purpose": "把一门手艺的工具、步骤、火候、行话一样样写准。写手艺就是写人，写得越准，人越可敬，不必夸。",
+   "family": "冷笔白描",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "wangzengqi-writing",
+    "family:冷笔白描"
+   ],
+   "procedure": [
+    "把一门手艺的工具、步骤、火候、行话一样样写准",
+    "写手艺就是写人，写得越准，人越可敬，不必夸"
+   ],
+   "failure_modes": [
+    "只写“技艺精湛”“匠心”，没有一个工具和步骤。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "wangzengqi-writing/references/atom-ops.md### 3. 手艺细写",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.wangzengqi.a4",
+   "name": "几笔传神",
+   "version": "0.1.0",
+   "purpose": "一个人只给一两个动作、一句话、一个习惯，人就站住了。不写外貌全貌，不写心理活动。",
+   "family": "典型画像",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "wangzengqi-writing",
+    "family:典型画像"
+   ],
+   "procedure": [
+    "一个人只给一两个动作、一句话、一个习惯，人就站住了",
+    "不写外貌全貌，不写心理活动"
+   ],
+   "failure_modes": [
+    "一个人写一大段外貌（“她五十多岁，中等身材，皮肤黝黑……”）。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "wangzengqi-writing/references/atom-ops.md### 4. 几笔传神",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.wangzengqi.a5",
+   "name": "宕开一笔",
+   "version": "0.1.0",
+   "purpose": "说着说着岔开，去说另一个地方、另一年、另一样东西，说一阵，再不着痕迹地回来。岔开的部分给正题添一层底色。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "wangzengqi-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "说着说着岔开，去说另一个地方、另一年、另一样东西，说一阵，再不着痕迹地回来",
+    "岔开的部分给正题添一层底色"
+   ],
+   "failure_modes": [
+    "岔出去就回不来；或用“话说回来”“言归正传”硬接。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "wangzengqi-writing/references/atom-ops.md### 5. 宕开一笔",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.wangzengqi.a6",
+   "name": "风俗铺陈",
+   "version": "0.1.0",
+   "purpose": "先把一地的节令、习俗、行规、人家的分类铺开，像介绍一个地方；人和事随后从里面长出来。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "wangzengqi-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "先把一地的节令、习俗、行规、人家的分类铺开，像介绍一个地方",
+    "人和事随后从里面长出来"
+   ],
+   "failure_modes": [
+    "写成民俗百科条目，没有一个人在里面。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "wangzengqi-writing/references/atom-ops.md### 6. 风俗铺陈",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.wangzengqi.a7",
+   "name": "草木有名",
+   "version": "0.1.0",
+   "purpose": "草木要叫出名字，写形、色、气味、开在哪、有什么用；有情也不拿它抒情。",
+   "family": "冷笔白描",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "wangzengqi-writing",
+    "family:冷笔白描"
+   ],
+   "procedure": [
+    "草木要叫出名字，写形、色、气味、开在哪、有什么用",
+    "有情也不拿它抒情"
+   ],
+   "failure_modes": [
+    "“那盆薄荷静静地陪伴着我”——草木成了抒情道具。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "wangzengqi-writing/references/atom-ops.md### 7. 草木有名",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.wangzengqi.a8",
+   "name": "短句口语",
+   "version": "0.1.0",
+   "purpose": "句子短，读得出声。多用“的”字短语、口头语和逗号断开的短读，长句后面跟一个很短的句子。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "wangzengqi-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "句子短，读得出声",
+    "多用“的”字短语、口头语和逗号断开的短读，长句后面跟一个很短的句子"
+   ],
+   "failure_modes": [
+    "长定语从句（“那个在每个寒冷冬日清晨都准时出现的煎饼摊”）。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "wangzengqi-writing/references/atom-ops.md### 8. 短句口语",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.wangzengqi.a9",
+   "name": "文白相间",
+   "version": "0.1.0",
+   "purpose": "在口语里偶尔夹一个文言短语或旧称，像撒一撮盐，让句子有一点筋骨。全文不超过三处。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "wangzengqi-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "在口语里偶尔夹一个文言短语或旧称，像撒一撮盐，让句子有一点筋骨",
+    "全文不超过三处"
+   ],
+   "failure_modes": [
+    "撒多了成了民国腔或半文言（“余尝闻之”“甚为可口”）。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "wangzengqi-writing/references/atom-ops.md### 9. 文白相间",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.wangzengqi.a10",
+   "name": "轻轻一放",
+   "version": "0.1.0",
+   "purpose": "结尾不总结、不升华、不留悬念，停在一件小事、一句闲话、一个画面上，像说完了随手放下筷子。",
+   "family": "不收的收尾",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "wangzengqi-writing",
+    "family:不收的收尾"
+   ],
+   "procedure": [
+    "结尾不总结、不升华、不留悬念，停在一件小事、一句闲话、一个画面上，像说完了随手放下筷子"
+   ],
+   "failure_modes": [
+    "结尾点题（“原来，最难忘的是人间烟火”）或连写几句感慨。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "wangzengqi-writing/references/atom-ops.md### 10. 轻轻一放",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.yuhua.a1",
+   "name": "零度叙述",
+   "version": "0.1.0",
+   "purpose": "用报账、拉家常的平静口气讲最重的事。叙述者不评价、不叹气、不替人物哭。",
+   "family": "冷笔白描",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "yuhua-writing",
+    "family:冷笔白描"
+   ],
+   "procedure": [
+    "用报账、拉家常的平静口气讲最重的事",
+    "叙述者不评价、不叹气、不替人物哭"
+   ],
+   "failure_modes": [
+    "加“痛苦地”“绝望中”；叙述者跳出来感慨命运。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "yuhua-writing/references/atom-ops.md### 1. 零度叙述",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.yuhua.a2",
+   "name": "重复结构",
+   "version": "0.1.0",
+   "purpose": "同一行为、同一套仪式在故事的几个关键节点反复出现，每次只变一点（钱数、人、天气），读者从变化里看见一生。",
+   "family": "回环呼应",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "yuhua-writing",
+    "family:回环呼应"
+   ],
+   "procedure": [
+    "同一行为、同一套仪式在故事的几个关键节点反复出现，每次只变一点（钱数、人、天气），读者从变化里看见一生"
+   ],
+   "failure_modes": [
+    "重复却毫无变化，变成凑字数；或者重复次数太多，超过四次就拖。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "yuhua-writing/references/atom-ops.md### 2. 重复结构",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.yuhua.a3",
+   "name": "死亡轻写",
+   "version": "0.1.0",
+   "purpose": "死用一两句话带过，不写临终独白，下一句马上接一个日常动作。轻，才压得住重。",
+   "family": "冷笔白描",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "yuhua-writing",
+    "family:冷笔白描"
+   ],
+   "procedure": [
+    "死用一两句话带过，不写临终独白，下一句马上接一个日常动作",
+    "轻，才压得住重"
+   ],
+   "failure_modes": [
+    "死亡场面写成大段抒情；用慢镜头细写伤口，滑向奇观。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "yuhua-writing/references/atom-ops.md### 3. 死亡轻写",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.yuhua.a4",
+   "name": "荒诞消解",
+   "version": "0.1.0",
+   "purpose": "在最沉重的地方放进一个荒唐、好笑、不合时宜的细节，把重量卸掉一半，让读者在笑和难受之间卡住。",
+   "family": "正经夸张",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "yuhua-writing",
+    "family:正经夸张"
+   ],
+   "procedure": [
+    "在最沉重的地方放进一个荒唐、好笑、不合时宜的细节，把重量卸掉一半，让读者在笑和难受之间卡住"
+   ],
+   "failure_modes": [
+    "荒诞拿来嘲笑受难者本人；笑点太多，整篇变段子。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "yuhua-writing/references/atom-ops.md### 4. 荒诞消解",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.yuhua.a5",
+   "name": "口语对话推进",
+   "version": "0.1.0",
+   "purpose": "短句、土话、一来一回，情节在对话里往前走；对话标签只用“说”。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "yuhua-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "短句、土话、一来一回，情节在对话里往前走",
+    "对话标签只用“说”"
+   ],
+   "failure_modes": [
+    "对话书面化、长句化；用“哽咽着说”“怒吼道”给情绪贴标签。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "yuhua-writing/references/atom-ops.md### 5. 口语对话推进",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.yuhua.a6",
+   "name": "数字与账目",
+   "version": "0.1.0",
+   "purpose": "用钱数、碗数、次数、斤两、年头代替形容词。数字越具体，苦越不用说。",
+   "family": "数据压舱",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "yuhua-writing",
+    "family:数据压舱"
+   ],
+   "procedure": [
+    "用钱数、碗数、次数、斤两、年头代替形容词",
+    "数字越具体，苦越不用说"
+   ],
+   "failure_modes": [
+    "数字堆砌没有生活逻辑；数字前后矛盾。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "yuhua-writing/references/atom-ops.md### 6. 数字与账目",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.yuhua.a7",
+   "name": "转述套层",
+   "version": "0.1.0",
+   "purpose": "设一个外来的“我”，听当事人讲自己的一生。隔一层，叙述更冷，也让当事人的平静显得可信。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "yuhua-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "设一个外来的“我”，听当事人讲自己的一生",
+    "隔一层，叙述更冷，也让当事人的平静显得可信"
+   ],
+   "failure_modes": [
+    "“我”抢戏，频繁评论；套层开了头却不收。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "yuhua-writing/references/atom-ops.md### 7. 转述套层",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.yuhua.a8",
+   "name": "物件贯穿",
+   "version": "0.1.0",
+   "purpose": "一件小物从头跟到尾，每次出现都多背一点情感，最后不用解释就能让人难受。",
+   "family": "回环呼应",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "yuhua-writing",
+    "family:回环呼应"
+   ],
+   "procedure": [
+    "一件小物从头跟到尾，每次出现都多背一点情感，最后不用解释就能让人难受"
+   ],
+   "failure_modes": [
+    "物件只出现一次就扔了；或者每次出现都配一段象征解读。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "yuhua-writing/references/atom-ops.md### 8. 物件贯穿",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.yuhua.a9",
+   "name": "自嘲式幽默",
+   "version": "0.1.0",
+   "purpose": "人物或叙述者拿自己开涮，苦里带笑。笑是人物扛事的办法，不是作者俯视人物。可少量吸收余华公开访谈中自嘲的语气，但不编造其言论。",
+   "family": "自嘲",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "yuhua-writing",
+    "family:自嘲"
+   ],
+   "procedure": [
+    "人物或叙述者拿自己开涮，苦里带笑",
+    "笑是人物扛事的办法，不是作者俯视人物",
+    "可少量吸收余华公开访谈中自嘲的语气，但不编造其言论"
+   ],
+   "failure_modes": [
+    "变成作者讲脱口秀；嘲笑残疾、贫穷本身。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "yuhua-writing/references/atom-ops.md### 9. 自嘲式幽默",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.yuhua.a10",
+   "name": "平静收尾",
+   "version": "0.1.0",
+   "purpose": "结尾回到一个日常画面、一句家常话或一个动作，不升华、不总结、不点题。",
+   "family": "不收的收尾",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "yuhua-writing",
+    "family:不收的收尾"
+   ],
+   "procedure": [
+    "结尾回到一个日常画面、一句家常话或一个动作，不升华、不总结、不点题"
+   ],
+   "failure_modes": [
+    "结尾写“这就是活着的意义”；突然拔高到时代与人性。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "yuhua-writing/references/atom-ops.md### 10. 平静收尾",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.zhangailing.a1",
+   "name": "格言起笔",
+   "version": "0.1.0",
+   "purpose": "第一句是一句断语，像一条警句，有点刻薄，有点武断，后文用细节慢慢证它。",
+   "family": "金句断语",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "zhangailing-writing",
+    "family:金句断语"
+   ],
+   "procedure": [
+    "第一句是一句断语，像一条警句，有点刻薄，有点武断，后文用细节慢慢证它"
+   ],
+   "failure_modes": [
+    "首句写成鸡汤（“生活总有温暖的角落”），或写成景物铺垫（“那是一个下雨的黄昏”）。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "zhangailing-writing/references/atom-ops.md### 1. 格言起笔",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.zhangailing.a2",
+   "name": "刁钻比喻",
+   "version": "0.1.0",
+   "purpose": "把抽象的感受比成一件具体、日常、看起来不相干的物件。刁在跨界，贴在细节。",
+   "family": "比喻",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "zhangailing-writing",
+    "family:比喻"
+   ],
+   "procedure": [
+    "把抽象的感受比成一件具体、日常、看起来不相干的物件",
+    "刁在跨界，贴在细节"
+   ],
+   "failure_modes": [
+    "喻体是“花”“月”“梦”“星辰”等现成意象；或一段里连用三个比喻。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "zhangailing-writing/references/atom-ops.md### 2. 刁钻比喻",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.zhangailing.a3",
+   "name": "以物写心",
+   "version": "0.1.0",
+   "purpose": "人物心事不说破，落在对一件物件的处置上：放在哪、扔不扔、给谁用。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "zhangailing-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "人物心事不说破，落在对一件物件的处置上：放在哪、扔不扔、给谁用"
+   ],
+   "failure_modes": [
+    "写完物件又补一句“她心里很难过”，把留白填死。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "zhangailing-writing/references/atom-ops.md### 3. 以物写心",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.zhangailing.a4",
+   "name": "色彩点睛",
+   "version": "0.1.0",
+   "purpose": "一两处精确到近乎挑剔的颜色，替情绪定调。不是“红”，是“酱红”“鸭蛋青”“隔夜茶的黄”。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "zhangailing-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "一两处精确到近乎挑剔的颜色，替情绪定调",
+    "不是“红”，是“酱红”“鸭蛋青”“隔夜茶的黄”"
+   ],
+   "failure_modes": [
+    "颜色堆成调色盘，一段五六种，反而什么也没定。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "zhangailing-writing/references/atom-ops.md### 4. 色彩点睛",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.zhangailing.a5",
+   "name": "冷眼算盘",
+   "version": "0.1.0",
+   "purpose": "把人情里的计算平静地写出来：谁先让、谁吃亏、谁在等对方开口。口吻不骂，像记账。",
+   "family": "冷笔白描",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "zhangailing-writing",
+    "family:冷笔白描"
+   ],
+   "procedure": [
+    "把人情里的计算平静地写出来：谁先让、谁吃亏、谁在等对方开口",
+    "口吻不骂，像记账"
+   ],
+   "failure_modes": [
+    "算盘写成控诉（“他们多么自私”），失去冷眼。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "zhangailing-writing/references/atom-ops.md### 5. 冷眼算盘",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.zhangailing.a6",
+   "name": "俗物入文",
+   "version": "0.1.0",
+   "purpose": "柴米油盐、菜价电费、电梯与外卖，写得有滋有味，不嫌俗，甚至偏爱俗。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "zhangailing-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "柴米油盐、菜价电费、电梯与外卖，写得有滋有味，不嫌俗，甚至偏爱俗"
+   ],
+   "failure_modes": [
+    "把俗物写成怀旧道具，或带着居高临下的“烟火气”赞美腔。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "zhangailing-writing/references/atom-ops.md### 6. 俗物入文",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.zhangailing.a7",
+   "name": "苍凉底色",
+   "version": "0.1.0",
+   "purpose": "在热闹或琐碎的场景里放一笔时间、搬走、失去，让读者忽然发凉。只放一笔。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "zhangailing-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "在热闹或琐碎的场景里放一笔时间、搬走、失去，让读者忽然发凉",
+    "只放一笔"
+   ],
+   "failure_modes": [
+    "写成伤春悲秋、“人生无常”的大词。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "zhangailing-writing/references/atom-ops.md### 7. 苍凉底色",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.zhangailing.a8",
+   "name": "声光切景",
+   "version": "0.1.0",
+   "purpose": "用一个声音或一束光做转场，同时标出时间流逝或心境变化。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "zhangailing-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "用一个声音或一束光做转场，同时标出时间流逝或心境变化"
+   ],
+   "failure_modes": [
+    "转场靠“时间过得很快”“转眼间”。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "zhangailing-writing/references/atom-ops.md### 8. 声光切景",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.zhangailing.a9",
+   "name": "反转体谅",
+   "version": "0.1.0",
+   "purpose": "看穿一个人的小算计之后，回身一句，替他说情：算计底下是怕，是穷，是不得已。",
+   "family": "反转揭底",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "zhangailing-writing",
+    "family:反转揭底"
+   ],
+   "procedure": [
+    "看穿一个人的小算计之后，回身一句，替他说情：算计底下是怕，是穷，是不得已"
+   ],
+   "failure_modes": [
+    "体谅写成和解大团圆，或者直接抒情“我们都不容易”。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "zhangailing-writing/references/atom-ops.md### 9. 反转体谅",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.zhangailing.a10",
+   "name": "格言收束",
+   "version": "0.1.0",
+   "purpose": "结尾一句断语，冷，轻，像随手一放，不升华、不号召。",
+   "family": "金句断语",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "zhangailing-writing",
+    "family:金句断语"
+   ],
+   "procedure": [
+    "结尾一句断语，冷，轻，像随手一放，不升华、不号召"
+   ],
+   "failure_modes": [
+    "结尾突然温暖（“愿每个合租的人都被温柔以待”），或排比抒情。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "zhangailing-writing/references/atom-ops.md### 10. 格言收束",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sanlian.a1",
+   "name": "共识假装",
+   "version": "0.1.0",
+   "purpose": "把个人判断包装成共识，再拆穿它",
+   "family": "反转揭底",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sanlian-writing",
+    "family:反转揭底"
+   ],
+   "procedure": [
+    "把个人判断包装成共识，再拆穿它"
+   ],
+   "failure_modes": [
+    "编一个不存在的共识——「众所周知」后面必须是**真共识**。读者一旦不同意前半句，后半句的拆穿就变成自说自话"
+   ],
+   "examples": [
+    "「众所周知，上海谈恋爱地狱难度」／「一到夏天，防晒就成了打工人的头等大事」"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sanlian-writing/references/atoms.md##1 共识假装",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sanlian.a2",
+   "name": "动词化网梗",
+   "version": "0.1.0",
+   "purpose": "用一个梗词给现象定调",
+   "family": "命名",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sanlian-writing",
+    "family:命名"
+   ],
+   "procedure": [
+    "用一个梗词给现象定调"
+   ],
+   "failure_modes": [],
+   "examples": [
+    "「卡颜卡月薪卡身份证号」／「主打一个全方位防护」"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sanlian-writing/references/atoms.md##2 动词化网梗",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sanlian.a3",
+   "name": "三连具体物",
+   "version": "0.1.0",
+   "purpose": "三个具体名词并列，替代一个抽象词",
+   "family": "排比/三段",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sanlian-writing",
+    "family:排比/三段"
+   ],
+   "procedure": [
+    "三个具体名词并列，替代一个抽象词"
+   ],
+   "failure_modes": [],
+   "examples": [
+    "「薪资、户口和父母的退休金」／「防晒喷雾、防晒衣、打伞」"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sanlian-writing/references/atoms.md##3 三连具体物",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sanlian.a4",
+   "name": "市场／职场语言挪用",
+   "version": "0.1.0",
+   "purpose": "用市场、军事、职场术语写日常",
+   "family": "正经夸张",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sanlian-writing",
+    "family:正经夸张"
+   ],
+   "procedure": [
+    "用市场、军事、职场术语写日常"
+   ],
+   "failure_modes": [],
+   "examples": [
+    "「沪上霸总不流通」／「物理外挂」／「接头暗号」／「KPI」"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sanlian-writing/references/atoms.md##4 市场／职场语言挪用",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sanlian.a5",
+   "name": "场景微电影",
+   "version": "0.1.0",
+   "purpose": "30 字内有人物、台词、转折",
+   "family": "小处起笔",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sanlian-writing",
+    "family:小处起笔"
+   ],
+   "procedure": [
+    "30 字内有人物、台词、转折"
+   ],
+   "failure_modes": [],
+   "examples": [
+    "「男朋友伞打手酸脖子晒红，当场服了：给我也买一个」"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sanlian-writing/references/atoms.md##5 场景微电影",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sanlian.a6",
+   "name": "群像人格化",
+   "version": "0.1.0",
+   "purpose": "把群体压成典型人物＋称呼体系",
+   "family": "典型画像",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sanlian-writing",
+    "family:典型画像"
+   ],
+   "procedure": [
+    "把群体压成典型人物＋称呼体系"
+   ],
+   "failure_modes": [],
+   "examples": [
+    "「沪女」／「弟弟」／「都市丽人」／「新中产」"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sanlian-writing/references/atoms.md##6 群像人格化",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sanlian.a7",
+   "name": "人物样本公式",
+   "version": "0.1.0",
+   "purpose": "标签＋名字＋身份＋一句访谈",
+   "family": "典型画像",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sanlian-writing",
+    "family:典型画像"
+   ],
+   "procedure": [
+    "标签＋名字＋身份＋一句访谈"
+   ],
+   "failure_modes": [],
+   "examples": [
+    "「沪漂 00 后响响」／「北漂女孩 Cindy」／「95 后小圆」＋「」引用"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sanlian-writing/references/atoms.md##7 人物样本公式",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sanlian.a8",
+   "name": "质疑→反驳",
+   "version": "0.1.0",
+   "purpose": "先替读者说出嫌弃，再给清醒回答",
+   "family": "预设驳论",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sanlian-writing",
+    "family:预设驳论"
+   ],
+   "procedure": [
+    "先替读者说出嫌弃，再给清醒回答"
+   ],
+   "failure_modes": [],
+   "examples": [
+    "「你可以说它丑，但别跟戴着它的人犟防晒效果」"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sanlian-writing/references/atoms.md##8 质疑→反驳",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sanlian.a9",
+   "name": "递进梗",
+   "version": "0.1.0",
+   "purpose": "1／2／3 递进制造笑点",
+   "family": "排比/三段",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sanlian-writing",
+    "family:排比/三段"
+   ],
+   "procedure": [
+    "1／2／3 递进制造笑点"
+   ],
+   "failure_modes": [
+    "递进到第 4、5 层——三段是笑点，五段是啰嗦。递增到第 3 层就收"
+   ],
+   "examples": [
+    "「一个人戴是神经病，两个人戴有点奇怪，三个人戴就成时尚单品」"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sanlian-writing/references/atoms.md##9 递进梗",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sanlian.a10",
+   "name": "回环结构",
+   "version": "0.1.0",
+   "purpose": "结尾呼应开头的关键词",
+   "family": "回环呼应",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sanlian-writing",
+    "family:回环呼应"
+   ],
+   "procedure": [
+    "结尾呼应开头的关键词"
+   ],
+   "failure_modes": [],
+   "examples": [
+    "开头「大结果」→ 结尾「不是为了拿大结果」；「谁也不爱」两次出现"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sanlian-writing/references/atoms.md##10 回环结构",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sanlian.a11",
+   "name": "造词命名",
+   "version": "0.1.0",
+   "purpose": "给旧现象起新名字，命名即观点",
+   "family": "命名",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sanlian-writing",
+    "family:命名"
+   ],
+   "procedure": [
+    "给旧现象起新名字，命名即观点"
+   ],
+   "failure_modes": [
+    "造一个自己都觉得别扭的词——命名的检验标准是「别人会不会拿去用」。自己都不顺口的词，读者不会传"
+   ],
+   "examples": [
+    "「糊弄饭→白人饭→干巴 lunch」进化链；「脸基尼」"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sanlian-writing/references/atoms.md##11 造词命名",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sanlian.a12",
+   "name": "松弛哲学收尾",
+   "version": "0.1.0",
+   "purpose": "不喊口号，落回具体生活场景",
+   "family": "不收的收尾",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sanlian-writing",
+    "family:不收的收尾"
+   ],
+   "procedure": [
+    "不喊口号，落回具体生活场景"
+   ],
+   "failure_modes": [],
+   "examples": [
+    "「只是为了今天这顿饭吃得香」／「我舒服就行，管你怎么看」"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sanlian-writing/references/atoms.md##12 松弛哲学收尾",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sanlian.a13",
+   "name": "网络梗考古",
+   "version": "0.1.0",
+   "purpose": "选题＝网上流行说法，考古源头→验证人群→解构心态",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sanlian-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "选题＝网上流行说法，考古源头",
+    "验证人群",
+    "解构心态"
+   ],
+   "failure_modes": [],
+   "examples": [
+    "「大水理论」：韦神拎大水→省钱 6000→工位养生标尺"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sanlian-writing/references/atoms.md##13 网络梗考古",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sanlian.a14",
+   "name": "理论家族",
+   "version": "0.1.0",
+   "purpose": "一个梗扩展成家族，扩篇幅＋加笑点",
+   "family": "命名",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sanlian-writing",
+    "family:命名"
+   ],
+   "procedure": [
+    "一个梗扩展成家族，扩篇幅＋加笑点"
+   ],
+   "failure_modes": [
+    "同一个梗扩三次以上——第二次还有效，第三次开始变成填充篇幅"
+   ],
+   "examples": [
+    "大水→大睡／大菜／大蛋理论→「大理论时代」"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sanlian-writing/references/atoms.md##14 理论家族",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sanlian.a15",
+   "name": "金句前置独立行",
+   "version": "0.1.0",
+   "purpose": "论点写成可传播金句，独立成行加粗",
+   "family": "金句断语",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sanlian-writing",
+    "family:金句断语"
+   ],
+   "procedure": [
+    "论点写成可传播金句，独立成行加粗"
+   ],
+   "failure_modes": [],
+   "examples": [
+    "「弱者才喝饮料，强者都是直接喝大水。」"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sanlian-writing/references/atoms.md##15 金句前置独立行",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sanlian.a16",
+   "name": "短促口语断言",
+   "version": "0.1.0",
+   "purpose": "4–8 字斩钉截铁，句号结尾",
+   "family": "金句断语",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sanlian-writing",
+    "family:金句断语"
+   ],
+   "procedure": [
+    "4–8 字斩钉截铁，句号结尾"
+   ],
+   "failure_modes": [],
+   "examples": [
+    "「蒙上就是胜利。」「管你什么原理。」"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sanlian-writing/references/atoms.md##16 短促口语断言",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sanlian.a17",
+   "name": "荒诞解读",
+   "version": "0.1.0",
+   "purpose": "日常物件＋专业术语＝笑点",
+   "family": "正经夸张",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sanlian-writing",
+    "family:正经夸张"
+   ],
+   "procedure": [
+    "日常物件＋专业术语＝笑点"
+   ],
+   "failure_modes": [],
+   "examples": [
+    "举 2L 大水＝「农夫行走」练核心"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sanlian-writing/references/atoms.md##17 荒诞解读",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sanlian.a18",
+   "name": "科技梗引用",
+   "version": "0.1.0",
+   "purpose": "半真半假的流行科普，一句带过",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sanlian-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "半真半假的流行科普，一句带过"
+   ],
+   "failure_modes": [],
+   "examples": [
+    "皮质醇／血清素／臀大肌／前额叶＋「有研究表明」"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sanlian-writing/references/atoms.md##18 科技梗引用",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sanlian.a19",
+   "name": "观念对比对仗",
+   "version": "0.1.0",
+   "purpose": "以前…如今…／旧词 vs 新词",
+   "family": "古今对照",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sanlian-writing",
+    "family:古今对照"
+   ],
+   "procedure": [
+    "以前…如今…／旧词 vs 新词"
+   ],
+   "failure_modes": [],
+   "examples": [
+    "「扫货是上古神话里的阔气排场，小样才是实在归宿」"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sanlian-writing/references/atoms.md##19 观念对比对仗",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sanlian.a20",
+   "name": "低姿态金句",
+   "version": "0.1.0",
+   "purpose": "把道理压到最低处收尾",
+   "family": "金句断语",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sanlian-writing",
+    "family:金句断语"
+   ],
+   "procedure": [
+    "把道理压到最低处收尾"
+   ],
+   "failure_modes": [],
+   "examples": [
+    "「成为一个最基本的尿尿不黄之人，比什么都重要」"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sanlian-writing/references/atoms.md##20 低姿态金句",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.sanlian.a21",
+   "name": "双关梗",
+   "version": "0.1.0",
+   "purpose": "一词两义，制造标题级笑点",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "sanlian-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "一词两义，制造标题级笑点"
+   ],
+   "failure_modes": [],
+   "examples": [
+    "股门＝股票／屁股；大水＝水瓶／格局"
+   ],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "sanlian-writing/references/atoms.md##21 双关梗",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.acheng.a1",
+   "name": "物事起笔",
+   "version": "0.1.0",
+   "purpose": "第一句就是一件事、一个场面或一个地方，不交代年代、背景、人物来历。背景在后文的动作里慢慢露出来。",
+   "family": "小处起笔",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "acheng-writing",
+    "family:小处起笔"
+   ],
+   "procedure": [
+    "第一句就是一件事、一个场面或一个地方，不交代年代、背景、人物来历",
+    "背景在后文的动作里慢慢露出来"
+   ],
+   "failure_modes": [
+    "先写“那是一个物质匮乏的年代”。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "acheng-writing/references/atom-ops.md### 1. 物事起笔",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.acheng.a2",
+   "name": "吃相",
+   "version": "0.1.0",
+   "purpose": "把吃写成一套郑重的、连续的动作：怎么端、怎么等、怎么入口、怎么嚼、怎么收拾残渣。不写香不香，只写怎么吃。饿过的人吃饭，每个动作都有分量。",
+   "family": "冷笔白描",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "acheng-writing",
+    "family:冷笔白描"
+   ],
+   "procedure": [
+    "把吃写成一套郑重的、连续的动作：怎么端、怎么等、怎么入口、怎么嚼、怎么收拾残渣",
+    "不写香不香，只写怎么吃",
+    "饿过的人吃饭，每个动作都有分量"
+   ],
+   "failure_modes": [
+    "“他狼吞虎咽，吃得津津有味。”——两个成语，零个动作。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "acheng-writing/references/atom-ops.md### 2. 吃相",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.acheng.a3",
+   "name": "动作代心理",
+   "version": "0.1.0",
+   "purpose": "不写人物想什么、感到什么，只写身体做了什么。紧张是手攥着，难过是不说话去擦锅，高兴是多给一个蛋却不提。",
+   "family": "冷笔白描",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "acheng-writing",
+    "family:冷笔白描"
+   ],
+   "procedure": [
+    "不写人物想什么、感到什么，只写身体做了什么",
+    "紧张是手攥着，难过是不说话去擦锅，高兴是多给一个蛋却不提"
+   ],
+   "failure_modes": [
+    "“我心里涌起一阵感动。”"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "acheng-writing/references/atom-ops.md### 3. 动作代心理",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.acheng.a4",
+   "name": "一句立人",
+   "version": "0.1.0",
+   "purpose": "一个人出场，只给一句话或一个习惯，人就站住了。后文不再解释这个人是什么性格。",
+   "family": "典型画像",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "acheng-writing",
+    "family:典型画像"
+   ],
+   "procedure": [
+    "一个人出场，只给一句话或一个习惯，人就站住了",
+    "后文不再解释这个人是什么性格"
+   ],
+   "failure_modes": [
+    "一段外貌描写加三个性格形容词。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "acheng-writing/references/atom-ops.md### 4. 一句立人",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.acheng.a5",
+   "name": "白话对白",
+   "version": "0.1.0",
+   "purpose": "对话极短，一句一两个词，一来一回，常不加“他说”“我问”；不靠对话交代情节，靠它露出人和人之间的分寸。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "acheng-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "对话极短，一句一两个词，一来一回，常不加“他说”“我问”",
+    "不靠对话交代情节，靠它露出人和人之间的分寸"
+   ],
+   "failure_modes": [
+    "一句对话后跟一长串“他激动地说道”。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "acheng-writing/references/atom-ops.md### 5. 白话对白",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.acheng.a6",
+   "name": "老话说道",
+   "version": "0.1.0",
+   "purpose": "让一个普通人——看门的、捡破烂的、手艺人——用家常土话说一句朴素道理。叙述者不接话、不赞同、不解释，下一句就写一个动作。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "acheng-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "让一个普通人——看门的、捡破烂的、手艺人——用家常土话说一句朴素道理",
+    "叙述者不接话、不赞同、不解释，下一句就写一个动作"
+   ],
+   "failure_modes": [
+    "叙述者紧接着说“这句话让我受益终身”。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "acheng-writing/references/atom-ops.md### 6. 老话说道",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.acheng.a7",
+   "name": "文言骨",
+   "version": "0.1.0",
+   "purpose": "用字是白话，句子节奏却短促、收得紧，常落在四字或类文言的收束上，像骨头撑着肉。点在段尾，不铺满全篇。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "acheng-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "用字是白话，句子节奏却短促、收得紧，常落在四字或类文言的收束上，像骨头撑着肉",
+    "点在段尾，不铺满全篇"
+   ],
+   "failure_modes": [
+    "“余观之，甚异”——那是仿古，不是骨头。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "acheng-writing/references/atom-ops.md### 7. 文言骨",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.acheng.a8",
+   "name": "重事轻写",
+   "version": "0.1.0",
+   "purpose": "全篇最重的一件事——死、散、失去——用最少的字带过，甚至只写事后的一个痕迹。读者自己去填。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "acheng-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "全篇最重的一件事——死、散、失去——用最少的字带过，甚至只写事后的一个痕迹",
+    "读者自己去填"
+   ],
+   "failure_modes": [
+    "在最重的地方写三段抒情。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "acheng-writing/references/atom-ops.md### 8. 重事轻写",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.acheng.a9",
+   "name": "俗中见道",
+   "version": "0.1.0",
+   "purpose": "把最俗的事（吃饱、挣钱、活下去）和一件“道”的事（棋、字、手艺、一棵树）并排放在一篇里，让两者互相照，不说哪个高。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "acheng-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "把最俗的事（吃饱、挣钱、活下去）和一件“道”的事（棋、字、手艺、一棵树）并排放在一篇里，让两者互相照，不说哪个高"
+   ],
+   "failure_modes": [
+    "写成“物质贫乏，精神富足”的对照议论。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "acheng-writing/references/atom-ops.md### 9. 俗中见道",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.acheng.a10",
+   "name": "冷收",
+   "version": "0.1.0",
+   "purpose": "结尾停在一个平常动作或一句平常话上，不总结、不升华、不叹息。像人转身走了。",
+   "family": "不收的收尾",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "acheng-writing",
+    "family:不收的收尾"
+   ],
+   "procedure": [
+    "结尾停在一个平常动作或一句平常话上，不总结、不升华、不叹息",
+    "像人转身走了"
+   ],
+   "failure_modes": [
+    "最后一段“那碗面的味道，我这辈子都忘不了”。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "acheng-writing/references/atom-ops.md### 10. 冷收",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.versailles.a1",
+   "name": "不经意带出",
+   "version": "0.1.0",
+   "purpose": "要炫的名词不当主角，放进从句、括号或时间状语里，主句讲一件无关小事。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "versailles-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "要炫的名词不当主角，放进从句、括号或时间状语里，主句讲一件无关小事"
+   ],
+   "failure_modes": [
+    "“我在陆家嘴上班！”——炫点当了主语。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "versailles-writing/references/atom-ops.md### 1. 不经意带出",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.versailles.a2",
+   "name": "抱怨式炫耀",
+   "version": "0.1.0",
+   "purpose": "抱怨的对象是一样好东西本身的“缺点”：太大、太多、太快、太贵重。",
+   "family": "反转揭底",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "versailles-writing",
+    "family:反转揭底"
+   ],
+   "procedure": [
+    "抱怨的对象是一样好东西本身的“缺点”：太大、太多、太快、太贵重"
+   ],
+   "failure_modes": [
+    "抱怨真的坏东西，那是吐槽，不是凡尔赛。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "versailles-writing/references/atom-ops.md### 2. 抱怨式炫耀",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.versailles.a3",
+   "name": "自谦实捧",
+   "version": "0.1.0",
+   "purpose": "先说自己不行，但“不行”的参照标准高得离谱，读者一算就明白。",
+   "family": "自嘲",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "versailles-writing",
+    "family:自嘲"
+   ],
+   "procedure": [
+    "先说自己不行，但“不行”的参照标准高得离谱，读者一算就明白"
+   ],
+   "failure_modes": [
+    "真的说自己差，没有藏一个高标准。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "versailles-writing/references/atom-ops.md### 3. 自谦实捧",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.versailles.a4",
+   "name": "他人代夸",
+   "version": "0.1.0",
+   "purpose": "夸奖不出自本人，而出自别人之口；本人只负责转述，还带点无奈。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "versailles-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "夸奖不出自本人，而出自别人之口",
+    "本人只负责转述，还带点无奈"
+   ],
+   "failure_modes": [
+    "转述完再补一句“其实我也觉得”——等于自夸。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "versailles-writing/references/atom-ops.md### 4. 他人代夸",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.versailles.a5",
+   "name": "名物轻放",
+   "version": "0.1.0",
+   "purpose": "品牌、学校、地名只说简称、昵称或颜色，像说一个很熟的朋友。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "versailles-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "品牌、学校、地名只说简称、昵称或颜色，像说一个很熟的朋友"
+   ],
+   "failure_modes": [
+    "写全称加价格，成了带货。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "versailles-writing/references/atom-ops.md### 5. 名物轻放",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.versailles.a6",
+   "name": "数字轻描",
+   "version": "0.1.0",
+   "purpose": "大数字配降调词：“才”“也就”“随便”“不到”。",
+   "family": "数据压舱",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "versailles-writing",
+    "family:数据压舱"
+   ],
+   "procedure": [
+    "大数字配降调词：“才”“也就”“随便”“不到”"
+   ],
+   "failure_modes": [
+    "数字配感叹号。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "versailles-writing/references/atom-ops.md### 6. 数字轻描",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.versailles.a7",
+   "name": "困扰包装",
+   "version": "0.1.0",
+   "purpose": "把优越条件写成一个正经的、需要解决的烦恼，语气认真。",
+   "family": "正经夸张",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "versailles-writing",
+    "family:正经夸张"
+   ],
+   "procedure": [
+    "把优越条件写成一个正经的、需要解决的烦恼，语气认真"
+   ],
+   "failure_modes": [
+    "烦恼写得太轻，读者不觉得反差。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "versailles-writing/references/atom-ops.md### 7. 困扰包装",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.versailles.a8",
+   "name": "反问求助",
+   "version": "0.1.0",
+   "purpose": "结尾向读者提问求建议，问题本身就是炫耀。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "versailles-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "结尾向读者提问求建议，问题本身就是炫耀"
+   ],
+   "failure_modes": [
+    "真的提了一个需要答案的问题。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "versailles-writing/references/atom-ops.md### 8. 反问求助",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.versailles.a9",
+   "name": "降维对比",
+   "version": "0.1.0",
+   "purpose": "用普通人的标准自比，假装自己“不懂行情”，显得不食人间烟火。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "versailles-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "用普通人的标准自比，假装自己“不懂行情”，显得不食人间烟火"
+   ],
+   "failure_modes": [
+    "降维太过，变成不可信的夸张。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "versailles-writing/references/atom-ops.md### 9. 降维对比",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.versailles.a10",
+   "name": "淡收",
+   "version": "0.1.0",
+   "purpose": "收在一个疲惫、无奈的表情或一声叹气上，不点破、不总结。",
+   "family": "不收的收尾",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "versailles-writing",
+    "family:不收的收尾"
+   ],
+   "procedure": [
+    "收在一个疲惫、无奈的表情或一声叹气上，不点破、不总结"
+   ],
+   "failure_modes": [
+    "结尾补“开玩笑的哈哈”，把包拆了。"
+   ],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "versailles-writing/references/atom-ops.md### 10. 淡收",
+    "evidence": ""
+   },
+   "completeness": 0.1
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.feature.a1",
+   "name": "开场帧",
+   "version": "0.1.0",
+   "purpose": "用一帧具体画面或时刻开场，读者直接进现场。",
+   "family": "小处起笔",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "feature-writing",
+    "family:小处起笔"
+   ],
+   "procedure": [
+    "用一帧具体画面或时刻开场，读者直接进现场"
+   ],
+   "failure_modes": [],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "feature-writing/references/atom-ops.md### 1. 开场帧",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.feature.a2",
+   "name": "题记装置",
+   "version": "0.1.0",
+   "purpose": "正文前放一句文学引语定调，再转入人物。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "feature-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "正文前放一句文学引语定调，再转入人物"
+   ],
+   "failure_modes": [],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "feature-writing/references/atom-ops.md### 2. 题记装置",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.feature.a3",
+   "name": "引语载荷",
+   "version": "0.1.0",
+   "purpose": "情绪和信息交给受访者的直接引语，关键引语极短、口语、带身体细节。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "feature-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "情绪和信息交给受访者的直接引语，关键引语极短、口语、带身体细节"
+   ],
+   "failure_modes": [],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "feature-writing/references/atom-ops.md### 3. 引语载荷",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.feature.a4",
+   "name": "细节处境化",
+   "version": "0.1.0",
+   "purpose": "物品、天气、职业动作都写进人物的处境，而且每个细节有出处。",
+   "family": "冷笔白描",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "feature-writing",
+    "family:冷笔白描"
+   ],
+   "procedure": [
+    "物品、天气、职业动作都写进人物的处境，而且每个细节有出处"
+   ],
+   "failure_modes": [],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "feature-writing/references/atom-ops.md### 4. 细节处境化",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.feature.a5",
+   "name": "履历压缩",
+   "version": "0.1.0",
+   "purpose": "用简历的节奏，把几十年人生压进一段。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "feature-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "用简历的节奏，把几十年人生压进一段"
+   ],
+   "failure_modes": [],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "feature-writing/references/atom-ops.md### 5. 履历压缩",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.feature.a6",
+   "name": "反差断言",
+   "version": "0.1.0",
+   "purpose": "开头断言这个人身上有一个「不常见／不应该」，制造张力。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "feature-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "开头断言这个人身上有一个「不常见／不应该」，制造张力"
+   ],
+   "failure_modes": [],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "feature-writing/references/atom-ops.md### 6. 反差断言",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.feature.a7",
+   "name": "群像切片",
+   "version": "0.1.0",
+   "purpose": "写事件群像时，一人一场景一段生平，用个体拼出事件的重量。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "feature-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "写事件群像时，一人一场景一段生平，用个体拼出事件的重量"
+   ],
+   "failure_modes": [],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "feature-writing/references/atom-ops.md### 7. 群像切片",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.feature.a8",
+   "name": "克制抒情",
+   "version": "0.1.0",
+   "purpose": "痛苦与感动全靠事实压强，不用一个抒情大词。",
+   "family": "冷笔白描",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "feature-writing",
+    "family:冷笔白描"
+   ],
+   "procedure": [
+    "痛苦与感动全靠事实压强，不用一个抒情大词"
+   ],
+   "failure_modes": [],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "feature-writing/references/atom-ops.md### 8. 克制抒情",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.feature.a9",
+   "name": "章节标题",
+   "version": "0.1.0",
+   "purpose": "用名词或比喻短语做小标题，克制、有诗意、不剧透。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "feature-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "用名词或比喻短语做小标题，克制、有诗意、不剧透"
+   ],
+   "failure_modes": [],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "feature-writing/references/atom-ops.md### 9. 章节标题",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.feature.a10",
+   "name": "参考资料",
+   "version": "0.1.0",
+   "purpose": "调查类特稿文末列文献清单，正文用细节转述研究，不用术语。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "feature-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "调查类特稿文末列文献清单，正文用细节转述研究，不用术语"
+   ],
+   "failure_modes": [],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "feature-writing/references/atom-ops.md### 10. 参考资料",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.gongwen.a1",
+   "name": "需求澄清",
+   "version": "0.1.0",
+   "purpose": "动笔前用 2–3 个问题补齐发文机关、主送、事项、时间、密级缓急。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "gongwen-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "动笔前用 2–3 个问题补齐发文机关、主送、事项、时间、密级缓急"
+   ],
+   "failure_modes": [],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "gongwen-writing/references/atom-ops.md### 1. 需求澄清",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.gongwen.a2",
+   "name": "文种判定",
+   "version": "0.1.0",
+   "purpose": "按行文关系选文种，并向用户说明理由。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "gongwen-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "按行文关系选文种，并向用户说明理由"
+   ],
+   "failure_modes": [],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "gongwen-writing/references/atom-ops.md### 2. 文种判定",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.gongwen.a3",
+   "name": "素材盘点",
+   "version": "0.1.0",
+   "purpose": "完整读取用户材料，提炼事实、数据和可用表述，先产出素材摘要再动笔。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "gongwen-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "完整读取用户材料，提炼事实、数据和可用表述，先产出素材摘要再动笔"
+   ],
+   "failure_modes": [],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "gongwen-writing/references/atom-ops.md### 3. 素材盘点",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.gongwen.a4",
+   "name": "情境化语气",
+   "version": "0.1.0",
+   "purpose": "对上恭敬、对下明确、平行协商。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "gongwen-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "对上恭敬、对下明确、平行协商"
+   ],
+   "failure_modes": [],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "gongwen-writing/references/atom-ops.md### 4. 情境化语气",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.gongwen.a5",
+   "name": "篇幅控制",
+   "version": "0.1.0",
+   "purpose": "紧急事项简明扼要，重大事项详尽周全。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "gongwen-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "紧急事项简明扼要，重大事项详尽周全"
+   ],
+   "failure_modes": [],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "gongwen-writing/references/atom-ops.md### 5. 篇幅控制",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.gongwen.a6",
+   "name": "规范结构",
+   "version": "0.1.0",
+   "purpose": "标题、主送、正文、落款、版记齐全，层次序数规范。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "gongwen-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "标题、主送、正文、落款、版记齐全，层次序数规范"
+   ],
+   "failure_modes": [],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "gongwen-writing/references/atom-ops.md### 6. 规范结构",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.gongwen.a7",
+   "name": "默念自查",
+   "version": "0.1.0",
+   "purpose": "草稿写完先默念一遍，拗口处改、啰嗦处删，再对照常见错误清单。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "gongwen-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "草稿写完先默念一遍，拗口处改、啰嗦处删，再对照常见错误清单"
+   ],
+   "failure_modes": [],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "gongwen-writing/references/atom-ops.md### 7. 默念自查",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.gongwen.a8",
+   "name": "交付多嘴一句",
+   "version": "0.1.0",
+   "purpose": "交稿时说明语气取向和可调方向，不扔下稿子就走。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "gongwen-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "交稿时说明语气取向和可调方向，不扔下稿子就走"
+   ],
+   "failure_modes": [],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "gongwen-writing/references/atom-ops.md### 8. 交付多嘴一句",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  },
+  {
+   "schema_version": "0.1",
+   "id": "we.gongwen.a9",
+   "name": "风格沉淀",
+   "version": "0.1.0",
+   "purpose": "经用户同意后，把观察到的偏好写入风格档案，下次自动应用。",
+   "family": "独有",
+   "kind": "domain",
+   "domain": "writing",
+   "tags": [
+    "gongwen-writing",
+    "family:独有"
+   ],
+   "procedure": [
+    "经用户同意后，把观察到的偏好写入风格档案，下次自动应用"
+   ],
+   "failure_modes": [],
+   "examples": [],
+   "lifecycle": "draft",
+   "provenance": {
+    "source": "writing-engines",
+    "source_ref": "gongwen-writing/references/atom-ops.md### 9. 风格沉淀",
+    "evidence": ""
+   },
+   "completeness": 0.0
+  }
+ ]
+}
