@@ -13,7 +13,10 @@ from .registry import Registry
 from .router import route, EvidenceStore
 from .runtime import execute
 
-CONDITIONS = ["baseline", "strong", "single", "composition"]
+CONDITIONS = ["baseline", "strong", "strong_long", "single", "composition"]
+# `strong_long` is the length/coverage-matched baseline: it neutralises the confound that a
+# multi-step prompt simply produces longer, more thorough output. Primary reference.
+REFERENCES = ("strong_long", "strong")
 DEV_IDS = {"t01", "t02", "t03"}  # tune prompts/primitives only on these; report on the held-out rest
 CLICHE = r"在这个[^。]{0,10}时代|总而言之|不难发现|毋庸置疑|赋能|抓手|综上所述|值得一提的是"
 
@@ -41,7 +44,19 @@ def load_we_tasks(we_root: str | Path) -> list[dict]:
     return tasks
 
 
+def load_task_file(path) -> list[dict]:
+    d = json.loads(Path(path).read_text(encoding="utf-8"))
+    return d["tasks"] if isinstance(d, dict) else d
+
+
 # ------------------------------------------------------------ objective scoring
+def usage_tokens(usage: dict) -> int:
+    """Prefer the provider's total; never add prompt+completion on top of it (double counting)."""
+    if isinstance(usage.get("total_tokens"), int):
+        return usage["total_tokens"]
+    return sum(v for k, v in usage.items() if isinstance(v, int))
+
+
 def _chars(text):
     return len(re.sub(r"\s|[#*>`\-]", "", text))
 
@@ -53,6 +68,14 @@ def check(assertion: dict, text: str) -> bool | None:
     if t in ("no_regex", "no_leak"): return not re.search(v, text)
     if t in ("any_regex", "must_regex"): return bool(re.search(v, text))
     if t == "uses_all": return all(x in text for x in v)
+    if t == "numbers_from_material":
+        allowed = set(re.findall(r"\d+(?:\.\d+)?", v or ""))
+        return not (set(re.findall(r"\d+(?:\.\d+)?", text)) - allowed)
+    if t == "max_named_people":
+        cands = set(re.findall(r"(?:名叫|一位叫|有个叫|叫做)([\u4e00-\u9fa5]{2,3})", text))
+        cands |= set(re.findall(r"([\u4e00-\u9fa5]{2,3})(?:告诉我|笑着说|回忆说)", text))
+        allowed = assertion.get("allowed", [])
+        return not {c for c in cands if not any(c in a or a in c for a in allowed)}
     if t == "count_min" and assertion.get("target") == "quotes": return len(re.findall(r"[“「]", text)) >= v
     return None  # manual / unsupported -> excluded from score
 
@@ -98,17 +121,20 @@ def run_benchmark(tasks, registry: Registry, model, out_dir: str | Path, conditi
             else:
                 cond_eff = cond
             for trial in range(trials):
-                rec = execute(model, task, cond_eff, trace, registry=registry, plan=plan)
+                # composition is a genuine two-pass run (draft -> independent verify -> repair),
+                # not only a longer prompt. The extra call is a real cost and is reported as such.
+                rec = execute(model, task, cond_eff, trace, verify=(cond_eff == "composition"),
+                              registry=registry, plan=plan)
                 s = score_output(task, rec["output"]) if not rec["error"] else {"pass_rate": 0.0, "success": False, "failed": ["error"]}
                 rows.append({"task": task["id"], "condition": cond, "effective": cond_eff, "trial": trial,
-                             "tokens": sum(v for v in rec["usage"].values() if isinstance(v, int)), **s})
+                             "tokens": usage_tokens(rec["usage"]), **s})
     (out / "scores.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
     report = summarize(rows)
     (out / "REPORT.md").write_text(render_report(report), encoding="utf-8")
     return report
 
 
-def summarize(rows, reference="strong") -> dict:
+def summarize(rows, references=REFERENCES) -> dict:
     by = defaultdict(list)
     for r in rows:
         by[(r["condition"], r["task"])].append(r)
@@ -124,18 +150,23 @@ def summarize(rows, reference="strong") -> dict:
                       "mean_pass_rate": round(sum(r["pass_rate"] or 0 for r in rs) / max(len(rs), 1), 3),
                       "cost_per_success_tokens": round(tok / k) if k else None,
                       "fallbacks": sum(r["effective"] != r["condition"] for r in rs)}
+    refs = [r for r in references if r in conds]
     lifts = {}
-    for c in conds:
-        if c == reference: continue
-        diffs = []
-        for t in tasks:
-            a, b = by.get((c, t)), by.get((reference, t))
-            if a and b:
-                diffs.append(sum(x["pass_rate"] or 0 for x in a) / len(a) - sum(x["pass_rate"] or 0 for x in b) / len(b))
-        m, lo, hi = bootstrap_mean_ci(diffs)
-        lifts[c] = {"lift": m, "ci95": [lo, hi], "paired_tasks": len(diffs),
-                    "verdict": "lift" if lo > 0 else ("harm" if hi < 0 else "inconclusive")}
-    return {"conditions": summary, "lift": lifts, "reference": reference}
+    for ref in refs:
+        per = {}
+        for c in conds:
+            if c == ref: continue
+            diffs = []
+            for t in tasks:
+                a, b = by.get((c, t)), by.get((ref, t))
+                if a and b:
+                    diffs.append(sum(x["pass_rate"] or 0 for x in a) / len(a) - sum(x["pass_rate"] or 0 for x in b) / len(b))
+            m, lo, hi = bootstrap_mean_ci(diffs)
+            per[c] = {"lift": m, "ci95": [lo, hi], "paired_tasks": len(diffs),
+                      "verdict": "lift" if lo > 0 else ("harm" if hi < 0 else "inconclusive")}
+        lifts[ref] = per
+    return {"conditions": summary, "lift": lifts, "references": refs,
+            "reference": refs[0] if refs else None}
 
 
 def render_report(rep: dict) -> str:
@@ -144,22 +175,34 @@ def render_report(rep: dict) -> str:
     for c, s in rep["conditions"].items():
         L.append(f"| {c} | {s['n']} | {s['task_success_rate']} | {s['success_ci']} | {s['mean_pass_rate']} | "
                  f"{s['cost_per_success_tokens']} | {s['fallbacks']} |")
-    L += ["", f"## Paired strategy lift vs `{rep['reference']}` (bootstrap 95% CI)", "",
-          "| condition | lift | CI | tasks | verdict |", "|---|---|---|---|---|"]
-    for c, l in rep["lift"].items():
-        L.append(f"| {c} | {l['lift']} | {l['ci95']} | {l['paired_tasks']} | {l['verdict']} |")
-    L += ["", "Falsification rule (pre-registered): if `composition` is not `lift` vs `strong`, "
-          "explicit composition has no demonstrated independent value at this scale."]
+    for ref, per in rep["lift"].items():
+        L += ["", f"## Paired strategy lift vs `{ref}` (bootstrap 95% CI)", "",
+              "| condition | lift | CI | tasks | verdict |", "|---|---|---|---|---|"]
+        for c, l in per.items():
+            L.append(f"| {c} | {l['lift']} | {l['ci95']} | {l['paired_tasks']} | {l['verdict']} |")
+    L += ["", "Pre-registered falsification rule: if `composition` is not `lift` vs `strong_long` "
+          "(the length- and coverage-matched baseline), explicit composition has no demonstrated "
+          "independent value at this scale. Beating only `strong` is not enough."]
     return "\n".join(L) + "\n"
 
 
-def export_blind(out_dir: str | Path, seed: int = 20261126) -> Path:
-    """traces.jsonl -> blind/<task>/<label>.md + key.json (keep key away from raters)."""
+def export_blind(out_dir: str | Path, seed: int = 20261126, trial_only: int | None = None) -> Path:
+    """traces.jsonl -> blind/<task>/<label>.md + key.json (keep key away from raters).
+
+    trial_only: keep only the n-th attempt of each (task, condition); None keeps all,
+    which is only useful for a small number of conditions.
+    """
     out = Path(out_dir)
     recs = [json.loads(l) for l in (out / "traces.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
     rng, key = random.Random(seed), {}
+    seen: dict[tuple, int] = {}
     by = defaultdict(list)
     for r in recs:
+        k = (r["task_id"], r["condition"])
+        r["trial"] = seen.get(k, 0)
+        seen[k] = r["trial"] + 1
+        if r["error"] or (trial_only is not None and r["trial"] != trial_only):
+            continue
         by[r["task_id"]].append(r)
     for tid, rs in by.items():
         rng.shuffle(rs)

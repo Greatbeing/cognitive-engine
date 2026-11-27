@@ -43,7 +43,7 @@
         "schema_version": {"const": "0.1"},
         "type": {"const": "ExecutionTrace"},
         "task_id": {"type": "string"},
-        "condition": {"enum": ["baseline", "strong", "single", "composition", "engine"]},
+        "condition": {"enum": ["baseline", "strong", "strong_long", "single", "composition", "engine"]},
         "model": {"type": "string"},
         "plan": {"type": ["array", "null"]},
         "prompt_sha": {"type": "string"},

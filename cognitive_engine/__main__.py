@@ -5,7 +5,7 @@ import sys
 
 from .registry import Registry, import_writing_engines
 from .router import route, EvidenceStore
-from .evaluation import load_we_tasks, run_benchmark, export_blind, CONDITIONS
+from .evaluation import load_we_tasks, load_task_file, run_benchmark, export_blind, CONDITIONS
 from .runtime import MockModel, OpenAICompatModel
 
 DEFAULT_REG = "registry"
@@ -22,7 +22,7 @@ def main(argv=None):
     b = sub.add_parser("bench"); b.add_argument("we_root"); b.add_argument("--registry", default=DEFAULT_REG)
     b.add_argument("--out", default="runs/exp-001"); b.add_argument("--model", default="mock")
     b.add_argument("--trials", type=int, default=1); b.add_argument("--limit", type=int)
-    b.add_argument("--conditions", default=",".join(CONDITIONS)); b.add_argument("--split", choices=["dev", "test"])
+    b.add_argument("--conditions", default=",".join(CONDITIONS)); b.add_argument("--split", choices=["dev", "test"]); b.add_argument("--tasks")
     x = sub.add_parser("blind"); x.add_argument("out")
     args = ap.parse_args(argv)
 
@@ -45,7 +45,7 @@ def main(argv=None):
         return 0
     if args.cmd == "bench":
         reg = Registry.load(args.registry)
-        tasks = [t for t in load_we_tasks(args.we_root) if not args.split or t["split"] == args.split][: args.limit]
+        tasks = [t for t in (load_task_file(args.tasks) if args.tasks else load_we_tasks(args.we_root)) if not args.split or t["split"] == args.split][: args.limit]
         model = MockModel() if args.model == "mock" else OpenAICompatModel(args.model)
         rep = run_benchmark(tasks, reg, model, args.out, args.conditions.split(","), args.trials,
                             EvidenceStore(f"{args.out}/evidence.json"))

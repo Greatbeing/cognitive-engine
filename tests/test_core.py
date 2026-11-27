@@ -58,6 +58,43 @@ class T(unittest.TestCase):
         lo, hi = wilson(12, 20)
         self.assertTrue(lo < .5 < hi)
 
+    def test_strong_long_controls_length_and_coverage(self):
+        from cognitive_engine.runtime import STRONG_PROMPT, STRONG_LONG_PROMPT, compile_prompt
+        self.assertTrue(STRONG_LONG_PROMPT.startswith(STRONG_PROMPT))
+        self.assertIn("原样引用其原话", STRONG_LONG_PROMPT)
+        self.assertIn("字数上限", STRONG_LONG_PROMPT)
+        t = normalize({"objective": "写点东西"})
+        self.assertEqual(compile_prompt(t, "strong_long")[0], STRONG_LONG_PROMPT)
+
+    def test_composition_is_two_pass(self):
+        from cognitive_engine.runtime import execute, _strip_checklist
+
+        class Counting(MockModel):
+            def __init__(self):
+                self.calls = 0; self.name = "counting"
+
+            def complete(self, prompt, system=None):
+                self.calls += 1
+                if system and "严格的审核者" in system:
+                    return {"text": "问题清单：无。\n\n修订全文\n\n# 修好的稿子\n正文。", "usage": {"total_tokens": 10}}
+                return {"text": "# 草稿\n正文。", "usage": {"total_tokens": 10}}
+
+        t = normalize({"objective": "写点东西", "inputs": {"material": [{"name": "甲", "quote": "乙"}]}})
+        m = Counting()
+        rec = execute(m, t, "composition", plan=[], verify=True)
+        self.assertEqual(m.calls, 2)
+        self.assertEqual([p["stage"] for p in rec["passes"]], ["draft", "verify"])
+        self.assertTrue(rec["output"].startswith("# 修好的稿子"))
+        self.assertNotIn("问题清单", rec["output"])
+        self.assertEqual(_strip_checklist("没有标记的文本"), "没有标记的文本")
+        m2 = Counting(); execute(m2, t, "composition", plan=[]); self.assertEqual(m2.calls, 1)
+        from cognitive_engine.runtime import _merge_usage
+        from cognitive_engine.evaluation import usage_tokens
+        self.assertEqual(_merge_usage({"total_tokens": 5, "d": {"x": 1}}, {"total_tokens": 7, "d": {"x": 2}}),
+                         {"total_tokens": 12, "d": {"x": 2}})
+        self.assertEqual(usage_tokens({"prompt_tokens": 3, "completion_tokens": 4, "total_tokens": 7}), 7)
+        self.assertEqual(usage_tokens({"prompt_tokens": 3, "completion_tokens": 4}), 7)
+
     def test_no_leak_in_compiled_user_prompt(self):
         r = self.reg()
         t = normalize({"objective": "公众号 城市"})
@@ -72,7 +109,7 @@ class T(unittest.TestCase):
         self.assertEqual(reg.lint(), {})
         with tempfile.TemporaryDirectory() as d:
             rep = run_benchmark(load_we_tasks(WE)[:2], reg, MockModel(), d)
-            self.assertIn("composition", rep["lift"])
+            self.assertIn("composition", rep["lift"]["strong_long"])
             self.assertTrue((Path(d) / "traces.jsonl").exists())
 
     def test_general_and_contracts(self):
