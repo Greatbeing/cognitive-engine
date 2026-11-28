@@ -11,6 +11,10 @@ Normalized task description and class; context availability and quality; success
 RoutingDecision: selected strategy; rejected alternatives; rationale and features; expected quality and cost ranges; risk assessment; fallback; policy version.
 
 ## 4. Initial routing pipeline
+
+The router must invoke the reuse-before-build policy before internal primitive planning. If a verified external capability fits, prefer it; if several explicitly composable assets cover the declared task contract, compose them; if compatibility is partial, propose adaptation; if a relevant candidate has unresolved trust gates, abstain for review. Only after a genuine gap is established may internal cognitive primitives be used as the strategy fallback. See [Reuse-Before-Build Policy](REUSE_BEFORE_BUILD_POLICY.md).
+
+
 1. Validate and normalize TaskSpec.
 2. Classify task type, complexity, ambiguity, and risk.
 3. Identify missing information and decide whether clarification is required.

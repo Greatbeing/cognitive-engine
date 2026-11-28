@@ -12,6 +12,10 @@ This roadmap is hypothesis-driven. Dates are planning windows, not commitments; 
 Exit criteria: schema validated by examples; registry passes lint; benchmark is reproducible and reports baseline comparisons.
 
 ## Phase 1 — Minimal Cognitive Engine (3–9 months)
+- [x] Add a deterministic reuse-before-build policy with reuse, compose, adapt, defer and build-gap decisions.
+- [x] Apply reuse-first routing before falling back to internal cognitive primitives.
+- [x] Add explicit license, security, lifecycle, verification and compatibility gates.
+- [ ] Connect the policy to a live capability catalog and evaluate against generate-first baselines.
 - [ ] Implement a small primitive library.
 - [ ] Add sequential and parallel composition.
 - [ ] Build a deterministic rule-based router.

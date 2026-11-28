@@ -19,10 +19,16 @@ def _check(value, schema, path, errors):
     if "enum" in schema and value not in schema["enum"]:
         errors.append(f"{path}: {value!r} not in {schema['enum']}")
     t = schema.get("type")
-    types = {"object": dict, "array": list, "string": str, "number": (int, float)}
-    if t and not isinstance(value, types[t]):
+    types = {"object": dict, "array": list, "string": str, "number": (int, float), "integer": int,
+             "boolean": bool, "null": type(None)}
+    allowed_types = t if isinstance(t, list) else ([t] if t else [])
+    if allowed_types and not any(
+        name in types and (isinstance(value, types[name]) and not (name == "number" and isinstance(value, bool)))
+        for name in allowed_types
+    ):
         errors.append(f"{path}: expected {t}")
         return
+    t = t if isinstance(t, str) else next((name for name in allowed_types if name in types and isinstance(value, types[name])), None)
     if t == "string":
         if len(value) < schema.get("minLength", 0):
             errors.append(f"{path}: too short")

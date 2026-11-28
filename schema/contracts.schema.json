@@ -6,61 +6,335 @@
   "$defs": {
     "TaskSpec": {
       "type": "object",
-      "required": ["id", "objective"],
+      "required": [
+        "id",
+        "objective"
+      ],
       "properties": {
-        "id": {"type": "string", "minLength": 1},
-        "objective": {"type": "string", "minLength": 1},
-        "inputs": {"type": "object"},
-        "constraints": {"type": "object"},
-        "risk_class": {"enum": ["low", "medium", "high", null]},
-        "success_criteria": {"type": "array", "items": {"type": "string"}},
-        "budget": {"type": "object"},
-        "domain": {"type": "string"},
-        "split": {"enum": ["dev", "test"]},
-        "assertions": {"type": "array", "items": {"type": "object", "required": ["type"]}}
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "objective": {
+          "type": "string",
+          "minLength": 1
+        },
+        "inputs": {
+          "type": "object"
+        },
+        "constraints": {
+          "type": "object"
+        },
+        "risk_class": {
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            null
+          ]
+        },
+        "success_criteria": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "budget": {
+          "type": "object"
+        },
+        "domain": {
+          "type": "string"
+        },
+        "split": {
+          "enum": [
+            "dev",
+            "test"
+          ]
+        },
+        "assertions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "type"
+            ]
+          }
+        },
+        "required_capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
     },
     "RoutingDecision": {
       "type": "object",
-      "required": ["schema_version", "id", "task_id", "policy_version", "status", "features", "plan", "rejected", "rationale", "fallback"],
+      "required": [
+        "schema_version",
+        "id",
+        "task_id",
+        "policy_version",
+        "status",
+        "features",
+        "plan",
+        "rejected",
+        "rationale",
+        "fallback"
+      ],
       "properties": {
-        "schema_version": {"const": "0.1"},
-        "id": {"type": "string"},
-        "task_id": {"type": "string"},
-        "policy_version": {"type": "string"},
-        "status": {"enum": ["selected", "abstain", "escalate"]},
-        "features": {"type": "object", "required": ["task_class", "confidence", "risk"]},
-        "plan": {"type": "array", "items": {"type": "object", "required": ["step", "primitive", "family"]}},
-        "rejected": {"type": "array"},
-        "rationale": {"type": "array", "items": {"type": "string"}},
-        "fallback": {"type": "string"}
+        "schema_version": {
+          "const": "0.1"
+        },
+        "id": {
+          "type": "string"
+        },
+        "task_id": {
+          "type": "string"
+        },
+        "policy_version": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "selected",
+            "abstain",
+            "escalate"
+          ]
+        },
+        "features": {
+          "type": "object",
+          "required": [
+            "task_class",
+            "confidence",
+            "risk"
+          ]
+        },
+        "plan": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "step",
+              "primitive",
+              "family"
+            ]
+          }
+        },
+        "rejected": {
+          "type": "array"
+        },
+        "rationale": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fallback": {
+          "type": "string"
+        },
+        "strategy_source": {
+          "enum": [
+            "external_capability",
+            "internal_cognitive_primitives",
+            "human_review"
+          ]
+        },
+        "reuse_decision": {
+          "$ref": "#/$defs/ReuseDecision"
+        },
+        "execution_authorized": {
+          "type": "boolean",
+          "const": false
+        }
       }
     },
     "ExecutionTrace": {
       "type": "object",
-      "required": ["schema_version", "type", "task_id", "condition", "model", "prompt_sha", "latency_s", "usage", "error", "output"],
+      "required": [
+        "schema_version",
+        "type",
+        "task_id",
+        "condition",
+        "model",
+        "prompt_sha",
+        "latency_s",
+        "usage",
+        "error",
+        "output"
+      ],
       "properties": {
-        "schema_version": {"const": "0.1"},
-        "type": {"const": "ExecutionTrace"},
-        "task_id": {"type": "string"},
-        "condition": {"enum": ["baseline", "strong", "strong_long", "single", "composition", "engine"]},
-        "model": {"type": "string"},
-        "plan": {"type": ["array", "null"]},
-        "prompt_sha": {"type": "string"},
-        "latency_s": {"type": "number", "minimum": 0},
-        "usage": {"type": "object"},
-        "error": {"type": ["string", "null"]},
-        "output": {"type": "string"}
+        "schema_version": {
+          "const": "0.1"
+        },
+        "type": {
+          "const": "ExecutionTrace"
+        },
+        "task_id": {
+          "type": "string"
+        },
+        "condition": {
+          "enum": [
+            "baseline",
+            "strong",
+            "strong_long",
+            "single",
+            "composition",
+            "engine"
+          ]
+        },
+        "model": {
+          "type": "string"
+        },
+        "plan": {
+          "type": [
+            "array",
+            "null"
+          ]
+        },
+        "prompt_sha": {
+          "type": "string"
+        },
+        "latency_s": {
+          "type": "number",
+          "minimum": 0
+        },
+        "usage": {
+          "type": "object"
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "output": {
+          "type": "string"
+        }
       }
     },
     "EvaluationReport": {
       "type": "object",
-      "required": ["conditions", "lift", "reference"],
+      "required": [
+        "conditions",
+        "lift",
+        "reference"
+      ],
       "properties": {
-        "conditions": {"type": "object"},
-        "lift": {"type": "object"},
-        "reference": {"type": "string"},
-        "split": {"type": ["string", "null"]}
+        "conditions": {
+          "type": "object"
+        },
+        "lift": {
+          "type": "object"
+        },
+        "reference": {
+          "type": "string"
+        },
+        "split": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "ReuseDecision": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "policy_version",
+        "action",
+        "selected",
+        "candidate_assessments",
+        "rejected",
+        "deferred",
+        "not_fit",
+        "rationale",
+        "build_authorized",
+        "execution_authorized",
+        "guardrails"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "0.1"
+        },
+        "policy_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "task_id": {
+          "type": "string"
+        },
+        "action": {
+          "enum": [
+            "reuse",
+            "compose",
+            "adapt",
+            "build_gap",
+            "defer"
+          ]
+        },
+        "selected": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "candidate_assessments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "status",
+              "fit_score",
+              "reasons"
+            ]
+          }
+        },
+        "rejected": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "deferred": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "not_fit": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rationale": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "build_authorized": {
+          "type": "boolean"
+        },
+        "execution_authorized": {
+          "type": "boolean",
+          "const": false
+        },
+        "required_capabilities_uncovered": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "guardrails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
     }
   }
