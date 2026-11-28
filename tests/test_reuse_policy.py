@@ -43,6 +43,14 @@ class ReusePolicyTests(unittest.TestCase):
         self.assertEqual(result["action"], "compose")
         self.assertEqual(set(result["selected"]), {"a.research", "b.verify"})
 
+    def test_single_capability_can_cover_full_contract_without_composition_flag(self):
+        result = decide_reuse(
+            {"objective": "research and verify", "required_capabilities": ["research", "verify"]},
+            [candidate("one.complete", capabilities=["research", "verify"], composable=False)],
+        )
+        self.assertEqual(result["action"], "reuse")
+        self.assertEqual(result["selected"], ["one.complete"])
+
     def test_adapts_partial_compatibility(self):
         result = decide_reuse({"objective": "transform data"},
                               [candidate("tool.transform", compatibility="partial")])
