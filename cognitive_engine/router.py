@@ -12,6 +12,7 @@ import uuid
 from pathlib import Path
 
 from .registry import Registry
+from .reuse_policy import decide_reuse
 
 POLICY_VERSION = "rules-0.1"
 
@@ -147,3 +148,66 @@ def _log(decision: dict, log_path):
         with open(log_path, "a", encoding="utf-8") as f:
             f.write(json.dumps(decision, ensure_ascii=False) + "\n")
     return decision
+
+
+def route_with_reuse(
+    task: dict | str,
+    registry: Registry,
+    capability_candidates: list[dict],
+    evidence: EvidenceStore | None = None,
+    *,
+    mode: str = "composition",
+    log_path: str | Path | None = None,
+) -> dict:
+    """Apply reuse-first before falling back to internal cognitive primitives.
+
+    A selected external capability is only a planning reference. This function
+    never invokes an adapter or authorizes execution. A build_gap result means
+    no eligible external capability was found; the existing internal router may
+    still plan cognitive primitives for the task, not generate repository code.
+    """
+    normalized = normalize(task)
+    reuse = decide_reuse(normalized, capability_candidates)
+
+    if reuse["action"] in {"reuse", "compose", "adapt"}:
+        plan = [
+            {"step": index, "capability": capability_id, "source": "external_catalog",
+             "reuse_action": reuse["action"]}
+            for index, capability_id in enumerate(reuse["selected"], start=1)
+        ]
+        result = {
+            "schema_version": "0.1",
+            "id": f"rd-{uuid.uuid4().hex[:8]}",
+            "task_id": normalized["id"],
+            "policy_version": POLICY_VERSION,
+            "status": "selected",
+            "strategy_source": "external_capability",
+            "reuse_decision": reuse,
+            "plan": plan,
+            "rationale": ["reuse-first policy selected existing capability assets"],
+            "fallback": "human_review",
+            "execution_authorized": False,
+        }
+    elif reuse["action"] == "defer":
+        result = {
+            "schema_version": "0.1",
+            "id": f"rd-{uuid.uuid4().hex[:8]}",
+            "task_id": normalized["id"],
+            "policy_version": POLICY_VERSION,
+            "status": "abstain",
+            "strategy_source": "human_review",
+            "reuse_decision": reuse,
+            "plan": [],
+            "rationale": ["potentially relevant capabilities require unresolved review"],
+            "fallback": "human_review",
+            "execution_authorized": False,
+        }
+    else:
+        internal = route(normalized, registry, evidence, mode=mode, log_path=log_path)
+        internal["strategy_source"] = "internal_cognitive_primitives"
+        internal["reuse_decision"] = reuse
+        internal["execution_authorized"] = False
+        internal["rationale"] = ["no eligible external capability; using the internal cognitive strategy library"] + internal.get("rationale", [])
+        return internal
+
+    return _log(result, log_path)
