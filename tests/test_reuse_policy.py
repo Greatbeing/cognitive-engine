@@ -87,7 +87,7 @@ class ReusePolicyTests(unittest.TestCase):
             [candidate("external.summarizer")],
         )
         self.assertEqual(result["strategy_source"], "external_capability")
-        self.assertEqual(result["plan"][0]["capability"], "external.summarizer")
+        self.assertEqual(result["plan"][0]["primitive"], "external.summarizer")
         self.assertFalse(result["execution_authorized"])
 
     def test_router_abstains_when_reuse_candidate_needs_review(self):
@@ -118,6 +118,19 @@ class ReusePolicyTests(unittest.TestCase):
         self.assertEqual(result["action"], "build_gap")
         self.assertEqual(result["selected"], [])
         self.assertEqual(result["required_capabilities_uncovered"], ["research", "verify"])
+
+    def test_reuse_routing_decision_matches_contract_schema(self):
+        import json
+        from cognitive_engine.registry import _check
+        schema = json.loads((ROOT / "schema" / "contracts.schema.json").read_text(encoding="utf-8"))
+        result = route_with_reuse(
+            {"id": "contract-task", "objective": "summarize a report"},
+            Registry(),
+            [candidate("external.summarizer")],
+        )
+        errors = []
+        _check(result, schema["$defs"]["RoutingDecision"], "$", errors)
+        self.assertEqual(errors, [])
 
     def test_invalid_candidate_and_duplicate_ids_fail_closed(self):
         with self.assertRaises(ValueError):
