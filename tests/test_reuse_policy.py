@@ -1,6 +1,8 @@
 import unittest
 
 from cognitive_engine.reuse_policy import decide_reuse
+from cognitive_engine.router import route_with_reuse
+from cognitive_engine.registry import Registry
 
 
 def candidate(cid, **overrides):
@@ -77,6 +79,35 @@ class ReusePolicyTests(unittest.TestCase):
         result = decide_reuse({"objective": "do task"},
                               [candidate("z.tool"), candidate("a.tool")])
         self.assertEqual(result["selected"], ["a.tool"])
+
+    def test_router_uses_external_capability_before_internal_primitives(self):
+        result = route_with_reuse(
+            {"id": "t3", "objective": "summarize a report"},
+            Registry(),
+            [candidate("external.summarizer")],
+        )
+        self.assertEqual(result["strategy_source"], "external_capability")
+        self.assertEqual(result["plan"][0]["capability"], "external.summarizer")
+        self.assertFalse(result["execution_authorized"])
+
+    def test_router_abstains_when_reuse_candidate_needs_review(self):
+        result = route_with_reuse(
+            {"id": "t4", "objective": "summarize a report"},
+            Registry(),
+            [candidate("external.summarizer", license_status="review_required")],
+        )
+        self.assertEqual(result["status"], "abstain")
+        self.assertEqual(result["strategy_source"], "human_review")
+
+    def test_router_falls_back_to_internal_primitives_only_after_gap(self):
+        result = route_with_reuse(
+            {"id": "t5", "objective": "写一篇公众号文章：年轻人周末流行逛菜市场"},
+            Registry(),
+            [],
+        )
+        self.assertEqual(result["strategy_source"], "internal_cognitive_primitives")
+        self.assertEqual(result["reuse_decision"]["action"], "build_gap")
+        self.assertFalse(result["execution_authorized"])
 
     def test_invalid_candidate_and_duplicate_ids_fail_closed(self):
         with self.assertRaises(ValueError):
