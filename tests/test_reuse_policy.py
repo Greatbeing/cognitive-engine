@@ -109,6 +109,16 @@ class ReusePolicyTests(unittest.TestCase):
         self.assertEqual(result["reuse_decision"]["action"], "build_gap")
         self.assertFalse(result["execution_authorized"])
 
+
+    def test_incomplete_composition_does_not_silently_select_partial_candidate(self):
+        result = decide_reuse(
+            {"objective": "research and verify", "required_capabilities": ["research", "verify"]},
+            [candidate("a.research", capabilities=["research"], composable=True)],
+        )
+        self.assertEqual(result["action"], "build_gap")
+        self.assertEqual(result["selected"], [])
+        self.assertEqual(result["required_capabilities_uncovered"], ["research", "verify"])
+
     def test_invalid_candidate_and_duplicate_ids_fail_closed(self):
         with self.assertRaises(ValueError):
             decide_reuse({"objective": "x"}, [candidate("bad", fit_score=1.5)])
