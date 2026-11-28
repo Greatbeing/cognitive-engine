@@ -171,8 +171,8 @@ def route_with_reuse(
 
     if reuse["action"] in {"reuse", "compose", "adapt"}:
         plan = [
-            {"step": index, "capability": capability_id, "source": "external_catalog",
-             "reuse_action": reuse["action"]}
+            {"step": index, "primitive": capability_id, "family": "external_capability",
+             "source": "external_catalog", "reuse_action": reuse["action"]}
             for index, capability_id in enumerate(reuse["selected"], start=1)
         ]
         result = {
@@ -182,6 +182,8 @@ def route_with_reuse(
             "policy_version": POLICY_VERSION,
             "status": "selected",
             "strategy_source": "external_capability",
+            "features": classify(normalized),
+            "rejected": reuse["rejected"],
             "reuse_decision": reuse,
             "plan": plan,
             "rationale": ["reuse-first policy selected existing capability assets"],
@@ -196,6 +198,8 @@ def route_with_reuse(
             "policy_version": POLICY_VERSION,
             "status": "abstain",
             "strategy_source": "human_review",
+            "features": classify(normalized),
+            "rejected": reuse["rejected"],
             "reuse_decision": reuse,
             "plan": [],
             "rationale": ["potentially relevant capabilities require unresolved review"],
