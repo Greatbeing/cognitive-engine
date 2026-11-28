@@ -15,8 +15,12 @@ This repository defines the architecture and specifications. The companion proje
 5. Cognitive Evaluation — task success, quality, transfer, cost, and regression measurement.
 6. Cognitive Evolution — evidence-gated updates to primitives, compositions, and routing policies.
 
+## Reuse-before-build
+
+The router applies a deterministic reuse policy before falling back to internal cognitive primitives. It can recommend reuse, composition, adaptation, a capability gap, or defer pending review. The policy never executes candidates or grants execution permission; adapters, least-privilege permissions, sandboxing and approval remain separate runtime gates. See [Reuse-Before-Build Policy](spec/REUSE_BEFORE_BUILD_POLICY.md).
+
 ## Principles
-Model-agnostic; inspectable; composable; measurable; conservative learning; reversible changes; least-privilege and human oversight for consequential actions.
+Reuse before reinvention; discover before integrate; evidence before trust; model-agnostic; inspectable; composable; measurable; conservative learning; reversible changes; least-privilege and human oversight for consequential actions.
 
 ## Feedback-loop hypothesis
 Let S_t be a versioned library of cognitive primitives and strategies, T_t the task, E_t external evidence, X_t execution, and V_t evaluation. Explore X_t = F(S_t,T_t,E_t), V_t = G(X_t,E_t,T_t), and S_(t+1) = U(S_t,X_t,V_t). This is a testable engineering abstraction, not a claim that a philosophical account of consciousness is equivalent to a computational architecture.
