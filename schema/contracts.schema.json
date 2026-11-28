@@ -59,6 +59,12 @@
               "type"
             ]
           }
+        },
+        "required_capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
