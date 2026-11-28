@@ -101,6 +101,20 @@ class ReusePolicyTests(unittest.TestCase):
         self.assertEqual(result["plan"][0]["primitive"], "external.summarizer")
         self.assertFalse(result["execution_authorized"])
 
+    def test_router_composes_external_candidates_for_declared_task_contract(self):
+        result = route_with_reuse(
+            {"id": "t-compose", "objective": "research and verify",
+             "required_capabilities": ["research", "verify"]},
+            Registry(),
+            [
+                candidate("external.research", capabilities=["research"], composable=True),
+                candidate("external.verify", capabilities=["verify"], composable=True),
+            ],
+        )
+        self.assertEqual(result["reuse_decision"]["action"], "compose")
+        self.assertEqual({step["primitive"] for step in result["plan"]},
+                         {"external.research", "external.verify"})
+
     def test_router_abstains_when_reuse_candidate_needs_review(self):
         result = route_with_reuse(
             {"id": "t4", "objective": "summarize a report"},
