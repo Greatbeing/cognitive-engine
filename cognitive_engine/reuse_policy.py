@@ -133,13 +133,13 @@ def decide_reuse(
             rationale.append("selected capabilities cover all required task capabilities")
         else:
             selected = []
-            rationale.append("eligible capabilities do not cover the full task contract")
+            rationale.append("eligible capabilities do not cover the full task contract; do not silently select a partial substitute")
 
-    if not selected and adaptable:
+    if not selected and adaptable and not required:
         selected = [adaptable[0]["id"]]
         action = "adapt"
         rationale.append("best relevant capability requires an explicit adaptation step")
-    elif not selected and eligible and action != "compose":
+    elif not selected and eligible and not required and action != "compose":
         selected = [eligible[0]["id"]]
         action = "reuse"
         rationale.append("best eligible existing capability meets the fit threshold")
