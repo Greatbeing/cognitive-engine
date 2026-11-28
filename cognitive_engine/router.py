@@ -41,6 +41,7 @@ def normalize(task: dict | str) -> dict:
     t = {"id": task.get("id") or f"task-{uuid.uuid4().hex[:8]}", "objective": task["objective"].strip(),
          "inputs": task.get("inputs", {}), "constraints": task.get("constraints", {}),
          "risk_class": task.get("risk_class"), "success_criteria": task.get("success_criteria", []),
+         "required_capabilities": task.get("required_capabilities", []),
          "budget": task.get("budget", {"max_steps": 6})}
     if not t["objective"]:
         raise ValueError("empty objective")
