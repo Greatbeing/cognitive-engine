@@ -1,4 +1,7 @@
 import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
 
 from cognitive_engine.reuse_policy import decide_reuse
 from cognitive_engine.router import route_with_reuse
