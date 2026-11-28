@@ -17,6 +17,8 @@ VALID_ACTIONS = {"reuse", "compose", "adapt", "build_gap", "defer", "reject"}
 
 
 def _candidate_id(candidate: dict[str, Any]) -> str:
+    if not isinstance(candidate, dict):
+        raise ValueError("every candidate must be an object")
     value = candidate.get("id")
     if not isinstance(value, str) or not value.strip():
         raise ValueError("every candidate must have a non-empty id")
@@ -119,7 +121,7 @@ def decide_reuse(
             for assessment in pool:
                 candidate = by_id[assessment["id"]]
                 coverage = remaining.intersection(candidate.get("capabilities", []))
-                if coverage and candidate.get("composable") is True:
+                if coverage and (coverage == remaining or candidate.get("composable") is True):
                     choices.append((len(coverage), assessment["fit_score"], assessment["id"], coverage))
             if not choices:
                 break
