@@ -257,10 +257,7 @@
           "minLength": 1
         },
         "task_id": {
-          "type": [
-            "string",
-            "null"
-          ]
+          "type": "string"
         },
         "action": {
           "enum": [
